@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato • INOVA CNH</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #0f172a;
+    }
+    .bg-layer {
+      background-color: #1e293b;
+    }
+    .blur-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+
+<body class="text-white min-h-screen flex flex-col">
+
+  <!-- HEADER -->
+  <header class="w-full bg-slate-900/80 backdrop-blur-lg border-b border-white/10 fixed top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white">I</div>
+        <span class="text-2xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">
+          INOVA CNH
+        </span>
+      </div>
+
+      <a href="index.html" class="text-[12px] font-black uppercase hover:text-cyan-400">
+        Voltar ao início
+      </a>
+    </div>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <main class="flex-1 pt-32 pb-20">
+    <div class="max-w-3xl mx-auto px-6">
+
+      <h1 class="text-4xl font-black text-center mb-10 tracking-tight">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
+          Fale Conosco
+        </span>
+      </h1>
+
+      <div class="blur-card p-10 rounded-3xl">
+        <p class="text-slate-300 text-center mb-10 text-sm leading-relaxed">
+          Nossa equipe está pronta para ajudar você. Preencha o formulário abaixo e retornaremos
+          o mais rápido possível.
+        </p>
+
+        <form class="space-y-6">
+
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-slate-400">Nome Completo</label>
+            <input type="text" required
+              class="w-full mt-2 py-3 px-4 bg-slate-800 rounded-xl border border-white/10 text-white text-sm focus:ring-2 focus:ring-cyan-400 outline-none">
+          </div>
+
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-slate-400">E-mail</label>
+            <input type="email" required
+              class="w-full mt-2 py-3 px-4 bg-slate-800 rounded-xl border border-white/10 text-white text-sm focus:ring-2 focus:ring-cyan-400 outline-none">
+          </div>
+
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-slate-400">Telefone</label>
+            <input type="text"
+              class="w-full mt-2 py-3 px-4 bg-slate-800 rounded-xl border border-white/10 text-white text-sm focus:ring-2 focus:ring-cyan-400 outline-none">
+          </div>
+
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-slate-400">Mensagem</label>
+            <textarea rows="5" required
+              class="w-full mt-2 py-3 px-4 bg-slate-800 rounded-xl border border-white/10 text-white text-sm focus:ring-2 focus:ring-cyan-400 outline-none"></textarea>
+          </div>
+
+          <button type="submit"
+            class="w-full py-4 bg-gradient-to-r from-cyan-400 to-blue-600 text-slate-900 font-black rounded-2xl text-sm uppercase tracking-widest hover:scale-105 shadow-lg shadow-cyan-500/30 transition-all">
+            Enviar Mensagem
+          </button>
+
+        </form>
+
+        <div class="text-center mt-10">
+          <p class="text-xs text-slate-400 mb-2">Ou se preferir, fale diretamente no WhatsApp:</p>
+          <a href="https://wa.me/5531997210815" target="_blank"
+             class="inline-block bg-green-500 text-white px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shadow-lg hover:scale-105 transition">
+            WhatsApp Atendimento
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-slate-500 text-[10px] py-6">
+    © 2026 INOVA CNH — Todos os direitos reservados
+  </footer>
+
+</body>
+</html>
