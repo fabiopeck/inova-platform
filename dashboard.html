@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Área do Aluno | INOVA CNH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .card-study { transition: all 0.3s ease; }
+    .card-study:hover { transform: translateY(-10px); border-color: #22d3ee; background: rgba(34, 211, 238, 0.05); }
+  </style>
+  <script>
+    // TRAVA DE SEGURANÇA: Só entra se estiver logado
+    if (localStorage.getItem('usuarioLogado') !== 'true') {
+      window.location.href = "login.html";
+    }
+
+    function logout() {
+      localStorage.removeItem('usuarioLogado');
+      window.location.href = "index.html";
+    }
+  </script>
+</head>
+<body class="text-white min-h-screen">
+
+  <!-- Menu Superior Dashboard -->
+  <nav class="border-b border-white/10 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center font-black text-white">I</div>
+        <span class="font-black uppercase tracking-tighter">INOVA CNH</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="hidden md:block text-right">
+          <p class="text-[10px] text-slate-500 font-black uppercase tracking-widest">Bem-vindo(a)</p>
+          <p id="userNameDisplay" class="text-sm font-black uppercase text-cyan-400">Aluno Inova</p>
+        </div>
+        <button onclick="logout()" class="text-[10px] font-black bg-red-500/10 text-red-500 px-4 py-2 rounded-lg uppercase hover:bg-red-500 hover:text-white transition-all">Sair</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-6 py-12">
+    
+    <!-- Cabeçalho de Boas-vindas -->
+    <header class="mb-12">
+      <h1 class="text-4xl font-black uppercase tracking-tighter mb-2">Área do <span class="text-cyan-400">Aluno</span></h1>
+      <p class="text-slate-400 font-medium">Prepare-se para sua aprovação com nossos materiais gratuitos.</p>
+    </header>
+
+    <!-- Barra de Progresso Geral -->
+    <div class="glass p-8 rounded-[2.5rem] mb-12 border-l-4 border-cyan-400">
+      <div class="flex justify-between items-end mb-4">
+        <div>
+          <p class="text-[10px] font-black uppercase text-slate-500 tracking-widest">Seu Progresso de Estudo</p>
+          <h2 class="text-2xl font-black uppercase">Rumo à Habilitação</h2>
+        </div>
+        <span class="text-cyan-400 font-black text-2xl">45%</span>
+      </div>
+      <div class="w-full bg-white/5 h-3 rounded-full overflow-hidden">
+        <div class="bg-gradient-to-r from-cyan-400 to-blue-600 h-full w-[45%] shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
+      </div>
+    </div>
+
+    <!-- Seção de Materiais -->
+    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-slate-500 mb-8">Meus Estudos Gratuitos</h3>
+    
+    <div class="grid md:grid-cols-2 gap-8">
+      
+      <!-- Card Apostila (ATUALIZADO PARA MATERIAL.HTML) -->
+      <div class="glass p-10 rounded-[3rem] card-study flex flex-col items-start relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-cyan-400 text-slate-900 px-6 py-2 font-black text-[10px] uppercase rounded-bl-2xl">Grátis</div>
+        <div class="w-14 h-14 bg-cyan-400/10 text-cyan-400 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-lg shadow-cyan-500/10">📚</div>
+        <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter">Apostila Digital 2026</h4>
+        <p class="text-slate-400 text-sm leading-relaxed mb-8">Material didático exclusivo com todo o conteúdo de Legislação, Direção Defensiva e Mecânica atualizado.</p>
+        <a href="material.html" class="mt-auto w-full bg-white text-slate-900 py-4 rounded-2xl font-black uppercase tracking-widest text-center hover:bg-cyan-400 transition-all">Abrir Apostila Digital</a>
+      </div>
+
+      <!-- Card Simulado -->
+      <div class="glass p-10 rounded-[3rem] card-study flex flex-col items-start relative overflow-hidden">
+        <div class="absolute top-0 right-0 bg-cyan-400 text-slate-900 px-6 py-2 font-black text-[10px] uppercase rounded-bl-2xl">Grátis</div>
+        <div class="w-14 h-14 bg-cyan-400/10 text-cyan-400 rounded-2xl flex items-center justify-center text-3xl mb-8 shadow-lg shadow-cyan-500/10">⏱️</div>
+        <h4 class="text-2xl font-black uppercase mb-4 tracking-tighter">Simulado Oficial 30 Questões</h4>
+        <p class="text-slate-400 text-sm leading-relaxed mb-8">Treine com o tempo oficial do Detran e questões que realmente caem na prova. Teste seus conhecimentos agora.</p>
+        <a href="simulados.html" class="mt-auto w-full bg-gradient-to-r from-cyan-400 to-blue-600 py-4 rounded-2xl font-black uppercase tracking-widest text-center shadow-lg shadow-cyan-500/20 hover:scale-105 transition-all">Iniciar Simulado</a>
+      </div>
+
+    </div>
+
+    <!-- Dicas Rápidas -->
+    <div class="mt-12 grid md:grid-cols-3 gap-6">
+      <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
+        <p class="text-cyan-400 font-black text-xs uppercase mb-2">Dica #01</p>
+        <p class="text-xs text-slate-400">Foque 50% do seu tempo em Legislação, é o tema com maior peso na prova.</p>
+      </div>
+      <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
+        <p class="text-cyan-400 font-black text-xs uppercase mb-2">Dica #02</p>
+        <p class="text-xs text-slate-400">Faça o simulado de 30 questões pelo menos 3 vezes antes da prova oficial.</p>
+      </div>
+      <div class="bg-white/5 p-6 rounded-2xl border border-white/5">
+        <p class="text-cyan-400 font-black text-xs uppercase mb-2">Dica #03</p>
+        <p class="text-xs text-slate-400">Leia a apostila digital com atenção especial às placas de regulamentação.</p>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // Exibe o nome do usuário salvo no login
+    const nome = localStorage.getItem('nomeUsuario');
+    if (nome) {
+      document.getElementById('userNameDisplay').innerText = nome;
+    }
+  </script>
+
+</body>
+</html>

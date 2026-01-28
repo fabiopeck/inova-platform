@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Agendar Aulas | INOVA CNH</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #0f172a;
+    color: white;
+    background-image: url('https://images.unsplash.com/photo-1589395595558-b1f985d6ef97?w=1600&q=50');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .blur-bg {
+    backdrop-filter: blur(7px);
+    background: rgba(15, 23, 42, 0.75);
+  }
+
+  .card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .ovni-green {
+    background: linear-gradient(to right, #39FF14, #00FF57);
+    color: #020617;
+    font-weight: 900;
+  }
+
+  .ovni-green:hover {
+    transform: scale(1.05);
+    transition: .25s;
+  }
+
+  .select-ovni {
+    background: linear-gradient(to right, #39FF14, #00FF57);
+    color: #020617;
+    border: none;
+    font-weight: 900;
+  }
+
+  .logo-card {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* WHATSAPP IDENTICO AO INDEX */
+  .zap-float {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    z-index: 999999;
+  }
+
+  .zap-wrapper {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .zap-ping {
+    position: absolute;
+    inset: 0;
+    background: #22c55e;
+    border-radius: 9999px;
+    opacity: .25;
+    animation: pingzap 1.5s infinite;
+  }
+
+  @keyframes pingzap {
+    0% { transform: scale(1); opacity: .8; }
+    80% { transform: scale(2); opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  .zap-btn {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    background: #22c55e;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 25px rgba(34,197,94,.4);
+    transition: .25s;
+  }
+
+  .zap-btn:hover {
+    transform: scale(1.18);
+  }
+
+  .zap-tooltip {
+    position: absolute;
+    right: 85px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px 16px;
+    background: #ffffff;
+    color: #020617;
+    font-size: 13px;
+    font-weight: 900;
+    border-radius: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: .25s;
+    box-shadow: 0 5px 20px rgba(255,255,255,0.15);
+  }
+
+  .zap-tooltip::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-left: 14px solid white;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  .zap-wrapper:hover .zap-tooltip {
+    opacity: 1;
+  }
+
+  /* SELO DOURADO */
+  .golden-seal {
+    border: 2px solid #bf953f;
+    padding: 10px;
+    border-radius: 50%;
+    width: 65px;
+    height: 65px;
+    font-size: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1.05;
+    text-align: center; /* CENTRALIZA O TEXTO */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(191,149,63,0.4);
+  }
+
+  .golden-text {
+    background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+</style>
+</head>
+
+<body>
+
+<header class="w-full bg-slate-900/80 backdrop-blur-lg border-b border-white/10 py-4 fixed top-0 z-50">
+  <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+    <a href="index.html" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white">I</div>
+      <span class="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400 uppercase">
+        INOVA CNH
+      </span>
+    </a>
+  </div>
+</header>
+
+<!-- CONTEÚDO -->
+<div class="pt-32 pb-20 max-w-5xl mx-auto px-6 blur-bg rounded-3xl shadow-xl">
+
+  <div class="text-center mb-10">
+    <h1 class="text-5xl font-black tracking-tight">
+      Agendar <span class="text-cyan-400">Aulas</span>
+    </h1>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <!-- SELECT + NOVO TEXTO EXPLICATIVO -->
+    <div class="card p-10 rounded-3xl">
+
+      <h3 class="text-center text-xl font-bold mb-6">
+        Clique aqui embaixo e agende suas aulas práticas já!
+      </h3>
+
+      <select id="selectAulas" onchange="calcular()" class="select-ovni w-full p-4 rounded-xl text-lg mt-4">
+        <option value="2">2 Aulas</option>
+        <option value="4">4 Aulas</option>
+        <option value="6">6 Aulas</option>
+        <option value="8">8 Aulas</option>
+        <option value="10">10 Aulas</option>
+      </select>
+
+    </div>
+
+    <!-- RESUMO (ALINHADO COM SELECT) -->
+    <div class="card p-10 rounded-3xl flex flex-col justify-center">
+
+      <h2 class="text-2xl font-bold mb-6">Resumo do Pagamento</h2>
+
+      <div class="space-y-3 text-lg">
+        <p>Total de aulas: <span id="totalAulas" class="font-bold text-white">2</span></p>
+        <p>Valor total: <span id="valorAluno" class="font-bold text-white">R$ 140,00</span></p>
+      </div>
+
+      <button onclick="abrirPagamento()" class="ovni-green w-full mt-10 py-4 rounded-xl text-lg shadow-xl">
+        PAGAR E AGENDAR
+      </button>
+
+      <div class="flex justify-center gap-7 mt-6 opacity-95">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" class="logo-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="logo-card">
+      </div>
+
+      <p class="text-center text-xs text-slate-400 mt-2">PIX • Boleto • Cartão até 12x</p>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div id="modalPagamento" class="hidden fixed inset-0 bg-black/70 backdrop-blur-md flex items-center justify-center z-[9999]">
+  <div class="bg-slate-900 p-10 rounded-3xl w-full max-w-md border border-white/10">
+    <h2 class="text-2xl font-black mb-6">Escolha a forma de pagamento</h2>
+
+    <button class="ovni-green w-full py-3 rounded-xl mb-4" onclick="pagamentoPIX()">PIX (QR Code)</button>
+    <button class="ovni-green w-full py-3 rounded-xl mb-4" onclick="pagamentoBoleto()">Boleto</button>
+    <button class="ovni-green w-full py-3 rounded-xl" onclick="pagamentoCartao()">Cartão (até 12x)</button>
+
+    <button onclick="fecharModal()" class="w-full mt-6 text-slate-400 hover:text-white text-sm">Cancelar</button>
+  </div>
+</div>
+
+<!-- WHATSAPP CORRIGIDO -->
+<a href="https://wa.me/5531997210815" target="_blank" class="zap-float">
+  <div class="zap-wrapper">
+    <div class="zap-ping"></div>
+
+    <div class="zap-btn">
+      <svg class="w-9 h-9 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/>
+      </svg>
+    </div>
+
+    <div class="zap-tooltip">Fale Conosco!</div>
+  </div>
+</a>
+
+<!-- RODAPÉ -->
+<footer class="py-20 bg-slate-950 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex flex-wrap justify-center items-center gap-12 mb-12 border-b border-white/5 pb-12">
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">SSL</div>
+        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Ambiente Seguro</span>
+      </div>
+
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">LGPD</div>
+        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Dados Protegidos</span>
+      </div>
+
+      <div class="flex flex-col items-center gap-2">
+        <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg">✓</div>
+        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Site Verificado</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="text-center md:text-left space-y-1">
+        <p class="text-slate-300 text-[10px] uppercase tracking-widest font-black">Grupo Inova License Technologies Inc.</p>
+        <p class="text-slate-300 text-[10px] uppercase tracking-widest">© 2026 INOVA CNH. Todos os direitos reservados.</p>
+        <p class="text-slate-400 text-[10px] uppercase tracking-widest pt-2">CNPJ: 00.000.000/0000-00</p>
+      </div>
+
+      <div class="relative flex items-center">
+        <svg class="absolute -top-2 -right-2 w-5 h-5 z-20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 17V15M7 10H17C18.1046 10 19 10.8954 19 12V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V12C5 10.8954 5.89543 10 7 10ZM12 3C9.23858 3 7 5.23858 7 8V10H17V8C17 5.23858 14.7614 3 12 3Z"
+          stroke="url(#gold_grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <defs>
+            <linearGradient id="gold_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#bf953f"/>
+              <stop offset="50%" stop-color="#fcf6ba"/>
+              <stop offset="100%" stop-color="#aa771c"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div class="golden-seal golden-text">Site<br>Confiável<br>2026</div>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+function calcular() {
+  const aulas = Number(document.getElementById("selectAulas").value);
+  const valorAluno = aulas * 70;
+  document.getElementById("totalAulas").innerText = aulas;
+  document.getElementById("valorAluno").innerText =
+    "R$ " + valorAluno.toFixed(2).replace(".", ",");
+}
+
+function abrirPagamento() {
+  document.getElementById("modalPagamento").classList.remove("hidden");
+}
+function fecharModal() {
+  document.getElementById("modalPagamento").classList.add("hidden");
+}
+
+function pagamentoPIX() { alert("Gerando QRCode PIX..."); }
+function pagamentoBoleto() { alert("Gerando boleto bancário..."); }
+function pagamentoCartao() { alert("Redirecionando para pagamento com cartão..."); }
+
+calcular();
+</script>
+
+</body>
+</html>

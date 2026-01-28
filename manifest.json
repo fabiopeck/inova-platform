@@ -1,0 +1,17 @@
+{
+  "name": "INOVA CNH - PLATAFORMA DE INSTRUTORES",
+  "short_name": "INOVA CNH",
+  "description": "Plataforma de Instrutores de Trânsito Credenciados",
+  "start_url": "index.html?v=2",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#22d3ee",
+  "icons": [
+    {
+      "src": "https://generated-images.adapta.one/fabiopeck86%40gmail.com/019bb1fb-47cc-74bc-9b65-ec1f38cd31fe/2026-01-12T13-23-42-973Z_A_professional_mobile_app_icon_for_INOVA_CNH_Th.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

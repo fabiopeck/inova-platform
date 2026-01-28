@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulado 30 Questões | INOVA CNH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+    .option-card { transition: all 0.2s ease; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.1); }
+    .selected { background: #22d3ee !important; color: #020617 !important; font-weight: 800; border-color: #22d3ee; }
+  </style>
+  <script>
+    if (localStorage.getItem('usuarioLogado') !== 'true') { window.location.href = "login.html"; }
+  </script>
+</head>
+<body class="text-white min-h-screen pb-20">
+  <nav class="border-b border-white/10 bg-slate-900/50 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center font-black text-white">I</div>
+        <span class="font-black uppercase tracking-tighter">INOVA CNH</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <div class="text-right">
+          <p class="text-[10px] text-slate-500 font-black uppercase tracking-widest">Tempo</p>
+          <p id="timer" class="text-xl font-black text-cyan-400">40:00</p>
+        </div>
+        <a href="dashboard.html" class="text-[10px] font-black bg-white/10 px-4 py-2 rounded-lg uppercase">Voltar</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="max-w-3xl mx-auto px-6 mt-12">
+    <div id="quiz-ui">
+      <div class="mb-8">
+        <div class="flex justify-between text-[10px] font-black uppercase tracking-widest text-slate-500 mb-2">
+          <span>Questão</span>
+          <span id="progress-text">1 de 30</span>
+        </div>
+        <div class="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+          <div id="progress-bar" class="bg-cyan-400 h-full transition-all duration-500" style="width: 3.33%"></div>
+        </div>
+      </div>
+
+      <div class="glass p-8 md:p-12 rounded-[2.5rem] mb-8">
+        <h2 id="question-text" class="text-lg font-bold leading-relaxed mb-10"></h2>
+        <div id="options-container" class="space-y-3"></div>
+      </div>
+
+      <div class="flex justify-between items-center">
+        <button id="prev-btn" class="text-[11px] font-black uppercase text-slate-500 hover:text-white disabled:opacity-30">Anterior</button>
+        <button id="next-btn" class="bg-cyan-400 px-10 py-4 rounded-2xl font-black uppercase text-slate-900 shadow-lg shadow-cyan-500/20">Próxima</button>
+      </div>
+    </div>
+
+    <div id="result-container" class="hidden text-center py-20">
+      <h2 id="result-title" class="text-4xl font-black uppercase mb-2"></h2>
+      <div class="glass p-8 rounded-3xl max-w-sm mx-auto mb-10">
+        <p id="final-score" class="text-6xl font-black"></p>
+        <p class="text-xs text-slate-500 mt-4 uppercase">Acertos de 30 questões</p>
+      </div>
+      <button onclick="location.reload()" class="bg-white text-slate-900 px-10 py-4 rounded-2xl font-black uppercase">Reiniciar</button>
+    </div>
+  </main>
+
+  <script>
+    const questions = [
+      { q: "A renovação da CNH para condutores com menos de 50 anos é de:", options: ["5 anos", "10 anos", "15 anos", "3 anos"], correct: 1 },
+      { q: "A velocidade máxima em via arterial não sinalizada é:", options: ["40 km/h", "60 km/h", "80 km/h", "110 km/h"], correct: 1 },
+      { q: "A placa R-1 (Pare) indica infração:", options: ["Média", "Grave", "Gravíssima", "Leve"], correct: 2 },
+      { q: "Um silvo breve do agente de trânsito significa:", options: ["Pare", "Siga", "Diminua", "Atenção"], correct: 1 },
+      { q: "Prazo para transferência de veículo:", options: ["15 dias", "30 dias", "45 dias", "60 dias"], correct: 1 },
+      { q: "Distância de seguimento serve para:", options: ["Ultrapassar", "Segurança", "Frenagem", "Reação"], correct: 1 },
+      { q: "Beber e dirigir gera suspensão por:", options: ["6 meses", "12 meses", "18 meses", "24 meses"], correct: 1 },
+      { q: "Placas de advertência são:", options: ["Azuis", "Vermelhas", "Amarelas", "Verdes"], correct: 2 },
+      { q: "Categoria C é para veículos acima de:", options: ["2.000kg", "3.500kg", "5.000kg", "1.500kg"], correct: 1 },
+      { q: "Cinto de 3 pontos protege:", options: ["Só peito", "Tronco e quadril", "Só cabeça", "Só pernas"], correct: 1 },
+      { q: "Farol baixo de dia em rodovias é para:", options: ["Todos", "Motos", "Ônibus", "Sem DRL"], correct: 3 },
+      { q: "Luz de ré é na cor:", options: ["Vermelha", "Amarela", "Branca", "Azul"], correct: 2 },
+      { q: "Órgão que registra veículos:", options: ["CONTRAN", "DETRAN", "PRF", "DNIT"], correct: 1 },
+      { q: "Celular ao dirigir é infração:", options: ["Média", "Grave", "Gravíssima", "Leve"], correct: 2 },
+      { q: "Faixa amarela contínua indica:", options: ["Pode ultrapassar", "Proibido ultrapassar", "Mão única", "Pare"], correct: 1 },
+      { q: "Preferência na rotatória sem sinal é de quem:", options: ["Vem da direita", "Já circula nela", "Vem da esquerda", "Veículo maior"], correct: 1 },
+      { q: "Validade da PPD:", options: ["6 meses", "1 ano", "2 anos", "5 anos"], correct: 1 },
+      { q: "Aquaplanagem é por:", options: ["Falta de freio", "Água e pneus gastos", "Óleo", "Curvas"], correct: 1 },
+      { q: "Extintor é obrigatório para:", options: ["Carros", "Caminhões/Ônibus", "Motos", "Bikes"], correct: 1 },
+      { q: "Placa 'Dê a Preferência' é:", options: ["Circular", "Octogonal", "Triangular", "Quadrada"], correct: 2 },
+      { q: "Pontuação máxima sem gravíssima:", options: ["20", "30", "40", "50"], correct: 2 },
+      { q: "Hemorragia externa deve-se:", options: ["Torniquete", "Comprimir local", "Álcool", "Lavar"], correct: 1 },
+      { q: "Poluição sonora causa:", options: ["Irritação", "Estresse/Danos", "Sono", "Nada"], correct: 1 },
+      { q: "Catalisador serve para:", options: ["Velocidade", "Menos gases", "Economia", "Frio"], correct: 1 },
+      { q: "Arrefecimento serve para:", options: ["Lubrificar", "Temperatura", "Energia", "Ar"], correct: 1 },
+      { q: "Embreagem serve para:", options: ["Frear", "Ligar", "Trocar marchas", "Potência"], correct: 2 },
+      { q: "Estacionar em garagem é:", options: ["Livre", "Infração média", "Permitido", "Leve"], correct: 1 },
+      { q: "Sinal amarelo piscando é:", options: ["Pare", "Cuidado", "Atenção", "Acelere"], correct: 2 },
+      { q: "Luz de direção é a:", options: ["Farol", "Pisca", "Seta", "Freio"], correct: 2 },
+      { q: "Primeira atitude no acidente:", options: ["Mover vítimas", "Sinalizar", "Ligar família", "Limpar"], correct: 1 }
+    ];
+
+    let currentIdx = 0;
+    let userAnswers = new Array(30).fill(null);
+    let timeLeft = 40 * 60;
+
+    const timerInterval = setInterval(() => {
+      timeLeft--;
+      const mins = Math.floor(timeLeft / 60);
+      const secs = timeLeft % 60;
+      document.getElementById('timer').innerText = `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+      if (timeLeft <= 0) showResults();
+    }, 1000);
+
+    function renderQuestion() {
+      const question = questions[currentIdx];
+      document.getElementById('question-text').innerText = `${currentIdx + 1}. ${question.q}`;
+      document.getElementById('progress-text').innerText = `${currentIdx + 1} de 30`;
+      document.getElementById('progress-bar').style.width = `${((currentIdx + 1) / 30) * 100}%`;
+      const optionsHtml = question.options.map((opt, i) => `
+        <div onclick="selectOption(${i})" class="option-card p-4 rounded-xl text-sm font-bold flex items-center gap-4 ${userAnswers[currentIdx] === i ? 'selected' : ''}">
+          <div class="w-6 h-6 rounded bg-white/10 flex items-center justify-center text-[10px]">${String.fromCharCode(65 + i)}</div>
+          ${opt}
+        </div>
+      `).join('');
+      document.getElementById('options-container').innerHTML = optionsHtml;
+      document.getElementById('prev-btn').disabled = currentIdx === 0;
+      document.getElementById('next-btn').innerText = currentIdx === 29 ? "Finalizar" : "Próxima";
+    }
+
+    window.selectOption = (i) => { userAnswers[currentIdx] = i; renderQuestion(); };
+    document.getElementById('prev-btn').onclick = () => { if (currentIdx > 0) { currentIdx--; renderQuestion(); } };
+    document.getElementById('next-btn').onclick = () => {
+      if (currentIdx < 29) { currentIdx++; renderQuestion(); } 
+      else { showResults(); }
+    };
+
+    function showResults() {
+      clearInterval(timerInterval);
+      document.getElementById('quiz-ui').classList.add('hidden');
+      document.getElementById('result-container').classList.remove('hidden');
+      let score = 0;
+      userAnswers.forEach((ans, i) => { if (ans === questions[i].correct) score++; });
+      document.getElementById('result-title').innerText = score >= 21 ? "Aprovado!" : "Reprovado";
+      document.getElementById('final-score').innerText = `${score}/30`;
+    }
+    renderQuestion();
+  </script>
+</body>
+</html>

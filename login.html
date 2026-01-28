@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | INOVA CNH</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; }
+    .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+  </style>
+</head>
+<body class="text-white min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-md w-full glass p-10 rounded-[2.5rem] shadow-2xl border border-white/10">
+    <!-- Logo -->
+    <div class="text-center mb-10">
+      <div class="w-16 h-16 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center font-black text-3xl mx-auto mb-4 shadow-lg shadow-cyan-500/20">I</div>
+      <h1 class="text-3xl font-black uppercase tracking-tighter">Fazer Login</h1>
+      <p class="text-slate-400 text-sm mt-2">Acesse sua pauta ou simulados</p>
+    </div>
+
+    <!-- Formulário -->
+    <form id="loginForm" class="space-y-6">
+      <div>
+        <label class="block text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">E-mail</label>
+        <input type="email" id="email" required class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-all text-white" placeholder="seu@email.com">
+      </div>
+      
+      <div>
+        <label class="block text-[10px] font-black uppercase tracking-widest text-cyan-400 mb-2">Senha</label>
+        <input type="password" id="password" required class="w-full bg-slate-900/50 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-cyan-400 transition-all text-white" placeholder="••••••••">
+      </div>
+
+      <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-blue-600 py-4 rounded-xl font-black uppercase tracking-widest hover:scale-[1.02] transition-all shadow-lg shadow-cyan-500/20 active:scale-95">
+        Entrar na Plataforma
+      </button>
+    </form>
+
+    <!-- Links Úteis -->
+    <div class="mt-8 text-center space-y-4">
+      <p class="text-slate-400 text-xs">Não tem uma conta? <a href="cadastro.html" class="text-cyan-400 font-bold hover:underline">Cadastre-se aqui</a></p>
+      <hr class="border-white/5">
+      <a href="index.html" class="inline-block text-slate-500 text-[10px] uppercase font-black hover:text-white transition-all">← Voltar ao Início</a>
+    </div>
+  </div>
+
+  <!-- SCRIPT DE LOGICA DE LOGIN -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Impede o recarregamento da página
+
+      // 1. Salva no navegador que o usuário está logado
+      localStorage.setItem('usuarioLogado', 'true');
+
+      // 2. Opcional: Salva o nome do usuário para usar no Dashboard
+      const emailValue = document.getElementById('email').value;
+      const nomeUsuario = emailValue.split('@')[0]; // Pega o que vem antes do @
+      localStorage.setItem('nomeUsuario', nomeUsuario);
+
+      // 3. Redireciona para o Dashboard
+      window.location.href = "dashboard.html";
+    });
+  </script>
+
+</body>
+</html>

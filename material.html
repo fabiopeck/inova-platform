@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manual Técnico de Aprovação 2026 | INOVAcnh</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #cbd5e1; line-height: 1.8; }
+    .book-page { background: #ffffff; color: #1e293b; font-family: 'Crimson Pro', serif; font-size: 1.25rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
+    .section-header { border-left: 6px solid #22d3ee; padding-left: 1.5rem; color: #0f172a; font-weight: 800; text-transform: uppercase; margin-top: 5rem; margin-bottom: 2rem; font-family: 'Plus Jakarta Sans'; letter-spacing: -0.02em; }
+    h3 { font-family: 'Plus Jakarta Sans'; font-weight: 700; color: #0891b2; margin-top: 3rem; margin-bottom: 1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.5rem; }
+    h4 { font-family: 'Plus Jakarta Sans'; font-weight: 700; color: #334155; margin-top: 2rem; font-size: 1.1rem; text-transform: uppercase; }
+    strong { color: #0e7490; font-weight: 700; }
+    .info-box { background: #f0f9ff; border-radius: 1.5rem; padding: 2rem; border: 1px solid #bae6fd; margin: 2.5rem 0; }
+    .danger-box { border-left: 5px solid #ef4444; background: #fef2f2; padding: 1.5rem; border-radius: 0 1.5rem 1.5rem 0; margin: 2rem 0; color: #991b1b; }
+    
+    /* Grid de Placas */
+    .placa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 25px; margin: 3rem 0; }
+    .placa-card { background: #f8fafc; border: 1px solid #e2e8f0; padding: 20px; border-radius: 1.2rem; text-align: center; transition: all 0.3s ease; }
+    .placa-card:hover { transform: translateY(-5px); border-color: #22d3ee; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+    .placa-img { width: 90px; height: 90px; margin: 0 auto 12px; display: block; object-fit: contain; }
+    .placa-name { font-family: 'Plus Jakarta Sans'; font-size: 11px; font-weight: 800; color: #0f172a; line-height: 1.3; }
+    .placa-code { font-size: 9px; font-weight: 900; color: #64748b; margin-bottom: 5px; display: block; }
+
+    /* Barra de Progresso Superior */
+    #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 6px; background: rgba(255,255,255,0.1); z-index: 100; }
+    #progress-bar { height: 100%; background: #22d3ee; width: 0%; box-shadow: 0 0 15px #22d3ee; transition: width 0.1s; }
+  </style>
+  <script>
+    if (localStorage.getItem('usuarioLogado') !== 'true') { window.location.href = "login.html"; }
+  </script>
+</head>
+<body class="antialiased">
+
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
+  <header class="bg-slate-900 border-b border-white/10 p-6 sticky top-0 z-50 backdrop-blur-md bg-opacity-95">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-cyan-500/20">I</div>
+        <span class="text-xl font-black text-white uppercase tracking-tighter">INOVAcnh</span>
+      </div>
+      <a href="dashboard.html" class="text-[10px] font-black bg-white/10 text-white px-6 py-2 rounded-full uppercase hover:bg-cyan-400 hover:text-slate-900 transition-all">Sair da Leitura</a>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto my-10 rounded-[3rem] overflow-hidden book-page">
+    
+    <!-- CAPA -->
+    <section class="p-12 md:p-32 text-center border-b border-slate-100">
+      <p class="text-cyan-600 font-black tracking-[0.6em] mb-6 text-[10px] uppercase">Conteúdo Criado por Especialistas • Versão Nacional 2026</p>
+      <h1 class="text-6xl md:text-9xl font-black text-slate-900 uppercase tracking-tighter leading-none mb-10">Manual de <br><span class="text-cyan-500">Aprovação</span></h1>
+      <p class="text-2xl text-slate-500 font-light max-w-3xl mx-auto leading-relaxed italic">O guia completo e sintetizado para a aprovação imediata nas categorias A e B.</p>
+      <div class="mt-16 p-10 bg-cyan-50 rounded-[3rem] border border-cyan-100 text-left text-slate-700">
+        Este manual contempla a <strong>Resolução CONTRAN nº 1.020/2025</strong> (Habilitação Independente) e todas as atualizações do CTB vigentes até Janeiro de 2026. Foco total nos temas mais recorrentes das provas teóricas nacionais.
+      </div>
+    </section>
+
+    <!-- CONTEÚDO TÉCNICO -->
+    <article class="p-8 md:p-24">
+      
+      <!-- CAPÍTULO 2: LEGISLAÇÃO -->
+      <h2 class="section-header">2. Legislação de Trânsito</h2>
+      <p>A legislação de trânsito brasileira é fundamentada no <strong>Código de Trânsito Brasileiro (CTB)</strong>. Em 2026, o grande marco é a consolidação da <strong>Habilitação Independente</strong>, que desburocratiza o processo para as categorias A e B, permitindo que o cidadão escolha seu método de estudo e instrutores credenciados de forma autônoma.</p>
+      
+      <h3>2.1 Conceitos e Definições</h3>
+      <p>O CTB define trânsito como a utilização das vias por pessoas, veículos e animais, isolados ou em grupos, conduzidos ou não, para fins de circulação, parada, estacionamento e operação de carga ou descarga.</p>
+
+      <h3>2.4 Sistema Nacional de Trânsito (SNT)</h3>
+      <p>O SNT é o conjunto de órgãos que gerenciam o trânsito no Brasil. Decore as funções para a prova:</p>
+      <ul class="space-y-4 mb-8">
+        <li>• <strong>CONTRAN (Conselho Nacional de Trânsito):</strong> Órgão máximo <strong>Normativo</strong> e Consultivo da União. É quem cria as Resoluções.</li>
+        <li>• <strong>SENATRAN (Secretaria Nacional de Trânsito):</strong> Órgão máximo <strong>Executivo</strong> da União.</li>
+        <li>• <strong>DETRAN (Departamento Estadual de Trânsito):</strong> Órgão Executivo dos Estados. Realiza os exames, emite a CNH e licencia veículos.</li>
+        <li>• <strong>JARI (Junta Administrativa de Recursos de Infrações):</strong> Órgão colegiado que julga os recursos de multas.</li>
+      </ul>
+
+      <h3>2.6 Processo de Habilitação</h3>
+      <p>Para se habilitar, o candidato deve ser penalmente imputável (18 anos), saber ler e escrever, e possuir RG e CPF. A <strong>PPD (Permissão Para Dirigir)</strong> tem validade de 1 ano. Para obter a CNH Definitiva, o condutor não pode cometer nenhuma infração <strong>Grave, Gravíssima</strong> ou ser <strong>Reincidente em Média</strong>.</p>
+      
+      <h4>Renovação da CNH (Regra 2026):</h4>
+      <ul class="list-disc list-inside space-y-2 mb-8">
+        <li><strong>10 anos:</strong> Condutores com menos de 50 anos.</li>
+        <li><strong>5 anos:</strong> Condutores entre 50 e 70 anos.</li>
+        <li><strong>3 anos:</strong> Condutores com 70 anos ou mais.</li>
+      </ul>
+
+      <h3>2.12 Infrações, Penalidades e Medidas Administrativas</h3>
+      <p>As infrações geram pontos e multas. Memorize os valores e a pontuação:</p>
+      <div class="overflow-x-auto my-10">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-100">
+            <tr><th class="p-5 text-left">Gravidade</th><th class="p-5 text-left">Pontos</th><th class="p-5 text-left">Valor (R$)</th></tr>
+          </thead>
+          <tbody>
+            <tr class="border-b"><td class="p-5 font-bold text-red-600">Gravíssima</td><td class="p-5">7</td><td class="p-5">293,47</td></tr>
+            <tr class="border-b"><td class="p-5 font-bold text-orange-600">Grave</td><td class="p-5">5</td><td class="p-5">195,23</td></tr>
+            <tr class="border-b"><td class="p-5 font-bold text-blue-600">Média</td><td class="p-5">4</td><td class="p-5">130,16</td></tr>
+            <tr class="border-b"><td class="p-5 font-bold text-green-600">Leve</td><td class="p-5">3</td><td class="p-5">88,38</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- CAPÍTULO: SINALIZAÇÃO -->
+      <h2 class="section-header">2.11 Sinalização Viária (Placas)</h2>
+      <p>A sinalização é o coração da prova teórica. Memorize as imagens e os significados exatos abaixo.</p>
+
+      <h3>2.11.5 Sinalização de Regulamentação (Vermelhas)</h3>
+      <p class="text-sm mb-6">Impõem obrigações, restrições ou proibições. O desrespeito constitui infração de trânsito.</p>
+      
+      <div class="placa-grid">
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Brazil_road_sign_R-1.svg/120px-Brazil_road_sign_R-1.svg.png" class="placa-img">
+          <span class="placa-code">R-1</span>
+          <span class="placa-name">Parada Obrigatória</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Brazil_road_sign_R-2.svg/120px-Brazil_road_sign_R-2.svg.png" class="placa-img">
+          <span class="placa-code">R-2</span>
+          <span class="placa-name">Dê a Preferência</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Brazil_road_sign_R-3.svg/120px-Brazil_road_sign_R-3.svg.png" class="placa-img">
+          <span class="placa-code">R-3</span>
+          <span class="placa-name">Sentido Proibido</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Brazil_road_sign_R-6a.svg/120px-Brazil_road_sign_R-6a.svg.png" class="placa-img">
+          <span class="placa-code">R-6a</span>
+          <span class="placa-name">Proibido Estacionar</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Brazil_road_sign_R-19_80.svg/120px-Brazil_road_sign_R-19_80.svg.png" class="placa-img">
+          <span class="placa-code">R-19</span>
+          <span class="placa-name">Velocidade Máxima Permitida</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Brazil_road_sign_R-24a.svg/120px-Brazil_road_sign_R-24a.svg.png" class="placa-img">
+          <span class="placa-code">R-24a</span>
+          <span class="placa-name">Sentido de Circulação da Via</span>
+        </div>
+      </div>
+
+      <h3>2.11.4 Sinalização de Advertência (Amarelas)</h3>
+      <p class="text-sm mb-6">Alertam os usuários sobre condições potencialmente perigosas na via, indicando sua natureza.</p>
+
+      <div class="placa-grid">
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Brazil_road_sign_A-1a.svg/120px-Brazil_road_sign_A-1a.svg.png" class="placa-img">
+          <span class="placa-code">A-1a</span>
+          <span class="placa-name">Curva Acentuada à Esquerda</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Brazil_road_sign_A-15.svg/120px-Brazil_road_sign_A-15.svg.png" class="placa-img">
+          <span class="placa-code">A-15</span>
+          <span class="placa-name">Parada Obrigatória à Frente</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Brazil_road_sign_A-32b.svg/120px-Brazil_road_sign_A-32b.svg.png" class="placa-img">
+          <span class="placa-code">A-32b</span>
+          <span class="placa-name">Passagem Sinalizada de Pedestres</span>
+        </div>
+        <div class="placa-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Brazil_road_sign_A-33b.svg/120px-Brazil_road_sign_A-33b.svg.png" class="placa-img">
+          <span class="placa-code">A-33b</span>
+          <span class="placa-name">Passagem Sinalizada de Escolares</span>
+        </div>
+      </div>
+
+      <!-- CAPÍTULO 3: DIREÇÃO DEFENSIVA -->
+      <h2 class="section-header">3. Direção Defensiva</h2>
+      <p>É o ato de dirigir prevenindo acidentes, apesar das ações incorretas dos outros e das condições adversas da via, do tempo e do veículo. Os 5 elementos básicos são: <strong>Conhecimento, Atenção, Previsão, Decisão e Habilidade.</strong></p>
+      
+      <div class="info-box">
+        <h4>Condições Adversas</h4>
+        <p>São fatores que podem causar acidentes. Memorize os 8 tipos: Luz, Tempo, Via, Trânsito, Veículo, Carga, Passageiro e Condutor.</p>
+      </div>
+
+      <div class="danger-box">
+        <strong>Aquaplanagem:</strong> Perda de contato dos pneus com o solo devido à camada de água. Procedimento: Não frear, tirar o pé do acelerador e manter a direção reta até recuperar a aderência.
+      </div>
+
+      <!-- CAPÍTULO 4: PRIMEIROS SOCORROS -->
+      <h2 class="section-header">4. Noções de Primeiros Socorros</h2>
+      <p>A primeira atitude em um acidente é <strong>Sinalizar o Local</strong> para evitar novos acidentes. Ligue imediatamente para 192 (SAMU) ou 193 (Bombeiros).</p>
+      <div class="danger-box">
+        <strong>O que NÃO fazer:</strong> Não movimentar a vítima, não retirar o capacete de motociclistas, não dar água, comida ou medicamentos.
+      </div>
+
+      <!-- CAPÍTULO 6: MECÂNICA -->
+      <h2 class="section-header">6. Mecânica Básica</h2>
+      <p>O condutor deve conhecer o funcionamento básico para identificar falhas e realizar a manutenção preventiva.</p>
+      <ul class="space-y-6 mb-12">
+        <li>• <strong>Sistema de Arrefecimento:</strong> Controla a temperatura do motor através da água e aditivos.</li>
+        <li>• <strong>Sistema de Lubrificação:</strong> Reduz o atrito entre as peças móveis do motor através do óleo.</li>
+        <li>• <strong>Pneus (TWI):</strong> O limite legal de desgaste é de 1,6mm de profundidade nos sulcos.</li>
+        <li>• <strong>Sistema Elétrico:</strong> A bateria armazena energia e o alternador gera energia enquanto o motor funciona.</li>
+      </ul>
+
+      <!-- FINALIZAÇÃO -->
+      <section class="mt-20 py-32 text-center bg-slate-900 rounded-[5rem] text-white">
+        <div class="text-9xl mb-10">🏆</div>
+        <h2 class="text-5xl font-black uppercase text-white mb-8 !border-none">Você Concluiu o Estudo!</h2>
+        <p class="text-slate-400 mb-16 max-w-3xl mx-auto px-6 text-2xl">Você percorreu todo o conteúdo técnico sintetizado para sua aprovação. Agora, valide seu conhecimento no simulado oficial.</p>
+        <a href="simulados.html" class="inline-block bg-cyan-400 text-slate-900 px-20 py-8 rounded-[2rem] font-black uppercase tracking-widest hover:scale-105 transition-all shadow-2xl">Iniciar Simulado de 30 Questões</a>
+      </section>
+
+    </article>
+
+    <!-- RODAPÉ LEGAL -->
+    <footer class="p-20 text-center text-slate-400 text-[12px] uppercase font-bold tracking-[0.4em] border-t border-slate-50">
+      Proibida a cópia ou reprodução sem autorização • Conteúdo criado por especialistas • Sintetizado para a aprovação • Grupo Inova License Technologies Inc.
+    </footer>
+
+  </main>
+
+  <script>
+    // Lógica da Barra de Progresso
+    window.onscroll = function() {
+      let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrolled = (winScroll / height) * 100;
+      document.getElementById("progress-bar").style.width = scrolled + "%";
+    };
+  </script>
+
+</body>
+</html>
