@@ -1,17 +1,270 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8"><title>Quem Somos | INOVA CNH</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quem Somos | INOVA CNH</title>
+
+  <!-- CONFIGURAÇÕES PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0f172a; }
+    .bg-deep { background-color: #0f172a; }
+    .bg-layer { background-color: #1e293b; }
+    .blur-card {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .golden-text {
+      background: linear-gradient(135deg,#bf953f,#fcf6ba,#b38728,#fbf5b7,#aa771c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .golden-seal {
+      border: 2px solid #bf953f;
+      padding: 10px;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 8px;
+      font-weight: 900;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 1.1;
+      box-shadow: 0 0 20px rgba(191,149,63,0.4);
+    }
+  </style>
 </head>
-<body class="bg-[#0f172a] text-white font-['Plus_Jakarta_Sans']">
-  <div class="max-w-4xl mx-auto py-20 px-6">
-    <a href="index.html" class="text-cyan-400 font-bold text-xs uppercase mb-10 inline-block">← Voltar ao Início</a>
-    <h1 class="text-5xl font-black mb-6 uppercase tracking-tighter">Quem <span class="text-cyan-400">Somos</span></h1>
-    <div class="bg-slate-900 p-10 rounded-[2rem] border border-white/10">
-      <p class="text-slate-300 leading-relaxed text-lg">A INOVA CNH é a primeira plataforma brasileira focada na Habilitação Independente. Nossa missão é conectar alunos a instrutores de trânsito credenciados, eliminando intermediários e reduzindo custos em até 80%.</p>
+
+<body class="text-white overflow-x-hidden">
+
+<!-- HEADER — IDÊNTICO AO DO SEU INDEX.HTML (NÃO ALTERADO) -->
+<header class="fixed w-full top-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-white/10">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+    <div class="flex items-center gap-10">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-cyan-500/20">I</div>
+        <span class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 leading-none uppercase">INOVA CNH</span>
+      </div>
+
+      <nav class="hidden lg:flex gap-8">
+          <!-- EMPRESA -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+              EMPRESA <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Quem Somos</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Segurança e Legalidade</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Contatos</a>
+            </div>
+          </div>
+
+          <!-- INSTRUTORES -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+              INSTRUTORES <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
+              <a href="#instrutores" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Seja um Parceiro</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Requisitos Técnicos</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Vantagens e Ganhos</a>
+            </div>
+          </div>
+          
+          <!-- ALUNOS -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+              ALUNOS <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Primeira Habilitação</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Simulados Online</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Agendar Aulas</a>
+            </div>
+          </div>
+
+          <!-- PARCERIAS -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+              PARCERIAS <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
+              <a href="#instrutores" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Afiliados</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Publicidade e Propaganda</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Imprensa</a>
+            </div>
+          </div>
+
+          <!-- AJUDA -->
+          <div class="relative group">
+            <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+              AJUDA <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Dúvidas Frequentes (FAQ)</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Suporte WhatsApp</a>
+              <a href="#" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Ouvidoria</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+    <div class="flex items-center gap-6">
+      <a href="cadastro.html" class="inline-block text-[12px] font-black hover:text-cyan-400 hover:scale-110 transition-all uppercase">Cadastro</a>
+
+      <a href="login.html">
+        <button class="bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-2.5 rounded-full text-[11px] font-black text-[#020617] hover:scale-105 transition-all shadow-lg shadow-cyan-500/30 uppercase">Login</button>
+      </a>
     </div>
+
   </div>
+</header>
+
+<!-- CONTEÚDO PRINCIPAL -->
+<section class="pt-40 pb-32 bg-deep">
+  <div class="max-w-5xl mx-auto px-6">
+
+    <div class="blur-card p-12 rounded-[2.5rem] border border-white/10">
+
+      <h1 class="text-4xl font-black uppercase tracking-tighter mb-10">
+        Quem Somos
+      </h1>
+
+      <p class="text-slate-300 leading-relaxed text-lg mb-10">
+        A INOVA CNH consolida-se como a plataforma de integração
+entre condutores e instrutores em todo o território nacional. 
+Nossa operação fundamenta-se nos pilares da transparência, da 
+segurança jurídica e da plena autonomia do cidadão.
+
+Desenvolvemos um ecossistema de alta performance que simplifica o acesso à
+habilitação, alinhando tecnologia de ponta às recentes atualizações 
+das regulamentações federais de trânsito.
+
+Nossa missão é prover uma infraestrutura inteligente e econômica, 
+onde a eficiência operacional garante ao futuro condutor uma jornada 
+direta, clara e rigorosamente pautada pela conformidade legal.
+
+Estabelecemos um trabalho de excelência para processos complexos 
+em soluções ágeis e acessíveis para todos os brasileiros.
+
+      </p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Nossa Identidade</h2>
+      <p class="text-slate-300 leading-relaxed mb-10">
+        Somos tecnologia, mas somos também pessoas. Nossa identidade é construída 
+        sobre três pilares fundamentais: <strong>credibilidade, inovação e acessibilidade</strong>. 
+        Trabalhamos para garantir que cada aluno tenha acesso a um processo justo, 
+        transparente e seguro, e para que cada instrutor seja valorizado como profissional 
+        essencial na formação de novos condutores.
+      </p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Missão</h2>
+      <p class="text-slate-300 leading-relaxed mb-10">
+        Democratizar o acesso à habilitação no Brasil, oferecendo ao cidadão um caminho 
+        acessível, transparente e eficiente para conquistar sua CNH, ao mesmo tempo em que 
+        valorizamos o instrutor autônomo, ampliando sua renda, sua autonomia e sua presença 
+        no mercado.
+      </p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Valores</h2>
+      <ul class="text-slate-300 leading-relaxed list-disc ml-6 mb-10">
+        <li>Ética e transparência em todas as relações</li>
+        <li>Compromisso absoluto com a legalidade</li>
+        <li>Foco na inovação que transforma vidas</li>
+        <li>Segurança e responsabilidade no trânsito</li>
+        <li>Valorização do trabalho do instrutor profissional</li>
+        <li>Respeito ao aluno como protagonista do processo</li>
+      </ul>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Objetivos</h2>
+      <p class="text-slate-300 leading-relaxed mb-10">
+        Nosso objetivo institucional é conectar alunos a instrutores credenciados pelos Órgãos Oficiais 
+        através da plataforma, viabilizando à democratização da habilitação autônoma do Brasil, 
+        reduzindo custos para o aluno, ampliando oportunidades para instrutores e contribuindo 
+        para um trânsito mais humano, consciente e preparado. Buscamos oferecer segurança, 
+        confiabilidade e excelência, em cada etapa do processo.
+      </p>
+
+      <h2 class="text-2xl font-bold text-cyan-400 mb-4">Nosso Compromisso</h2>
+      <p class="text-slate-300 leading-relaxed mb-6">
+        Assumimos um compromisso público com a sociedade: trabalhar de forma alinhada às regulamentações 
+        nacionais, proteger os dados dos nossos usuários, atuar com total transparência e entregar uma 
+        experiência digital confiável e robusta, que respeite o tempo, o investimento e a confiança de 
+        cada cliente e instrutor.
+                                
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER (COM CADEADO) -->
+<footer class="py-20 bg-slate-950 border-t border-white/5 relative">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <div class="flex flex-wrap justify-center items-center gap-12 mb-12 border-b border-white/5 pb-12">
+      <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">SSL</div>
+          <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Ambiente Seguro</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">LGPD</div>
+          <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Dados Protegidos</span>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg">✓</div>
+          <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Site Verificado</span>
+      </div>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+
+      <div class="text-center md:text-left space-y-1">
+        <p class="text-slate-300 text-[10px] uppercase tracking-widest font-black">Grupo Inova License Technologies Inc.</p>
+        <p class="text-slate-300 text-[10px] uppercase tracking-widest">© 2026 INOVA CNH. Todos os direitos reservados.</p>
+        <p class="text-slate-400 text-[10px] uppercase tracking-widest pt-2">CNPJ: 00.000.000/0000-00</p>
+      </div>
+
+      <div class="relative flex items-center">
+        <!-- CADEADO -->
+        <svg class="absolute -top-2 -right-2 w-5 h-5 z-20" viewBox="0 0 24 24" fill="none">
+          <path d="M12 17V15M7 10H17C18.1046 10 19 10.8954 19 12V19C19 
+                   20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 
+                   5 19V12C5 10.8954 5.89543 10 7 10ZM12 3C9.23858 3 
+                   7 5.23858 7 8V10H17V8C17 5.23858 14.7614 3 12 3Z"
+                stroke="url(#gold_grad)" stroke-width="3" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="gold_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#bf953f"/>
+              <stop offset="50%" stop-color="#fcf6ba"/>
+              <stop offset="100%" stop-color="#aa771c"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <!-- SELO DOURADO -->
+        <div class="golden-seal golden-text">
+          Site<br>Confiável<br>2026
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
 </body>
 </html>
