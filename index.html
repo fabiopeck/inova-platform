@@ -69,6 +69,19 @@
   </style>
 </head>
 <body class="text-white overflow-x-hidden">
+<script>
+var senha = "CASA33426467";
+var acesso = sessionStorage.getItem("acesso-autorizado");
+if(acesso !== "true"){
+    var tentativa = prompt("Digite a senha para acessar o site:");
+    if(tentativa === senha){
+        sessionStorage.setItem("acesso-autorizado", "true");
+    } else {
+        alert("Acesso negado.");
+        window.location.href = "https://google.com";
+    }
+}
+</script>
 
   <!-- HEADER -->
   <header class="fixed w-full top-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-white/10">
