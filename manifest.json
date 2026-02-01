@@ -1,17 +1,37 @@
 {
-  "name": "INOVA CNH - PLATAFORMA DE INSTRUTORES",
+  "name": "INOVA CNH - Plataforma de Instrutores Credenciados",
   "short_name": "INOVA CNH",
-  "description": "Plataforma de Instrutores de Trânsito Credenciados",
-  "start_url": "index.html?v=2",
+  "description": "Instrutores de trânsito credenciados pelo DETRAN. Aulas práticas agendadas diretamente, sem autoescola.",
+  
+  "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#020617",
-  "theme_color": "#22d3ee",
+  "orientation": "portrait",
+  "theme_color": "#0f172a",
+  "background_color": "#0f172a",
+
   "icons": [
     {
-      "src": "https://generated-images.adapta.one/fabiopeck86%40gmail.com/019bb1fb-47cc-74bc-9b65-ec1f38cd31fe/2026-01-12T13-23-42-973Z_A_professional_mobile_app_icon_for_INOVA_CNH_Th.png",
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "icons/icon-maskable-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ]
 }
