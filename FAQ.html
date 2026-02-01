@@ -1,347 +1,381 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FAQ • INOVA CNH</title>
+  <title>FAQ • Perguntas Frequentes | INOVA CNH</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#0f172a" />
 
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800;900&display=swap" rel="stylesheet"/>
 
   <style>
     body {
-      font-family: "Plus Jakarta Sans", sans-serif;
-      background-color: #0f172a;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color:#0f172a;
     }
-
-    details summary::-webkit-details-marker {
-      display: none;
+    .blur-card {
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.13);
+      backdrop-filter:blur(12px);
     }
-
-    summary {
-      cursor: pointer;
-    }
-
-    .golden-text {
-      background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
     .golden-seal {
-      border: 2px solid #bf953f;
-      padding: 10px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 8px;
-      font-weight: 900;
-      width: 65px;
-      height: 65px;
-      text-transform: uppercase;
-      box-shadow: 0 0 20px rgba(191, 149, 63, 0.4);
-      line-height: 1.1;
+      width:70px;height:70px;
+      border-radius:50%;
+      border:2px solid #bf953f;
+      padding:10px;
+      font-size:9px;
+      font-weight:900;
+      line-height:1.1;
+      text-transform:uppercase;
+      background-image:linear-gradient(135deg,#bf953f,#fcf6ba,#b38728,#fbf5b7,#aa771c);
+      color:transparent;
+      -webkit-background-clip:text;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 0 20px rgba(191,149,63,.4);
     }
   </style>
 </head>
 
-<body class="text-white">
+<body class="text-white overflow-x-hidden">
 
-  <!-- HEADER (idêntico ao index) -->
-  <header class="w-full bg-slate-900/80 backdrop-blur-lg border-b border-white/10 fixed top-0 z-50">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+<!-- =================================================== -->
+<!-- ==================== HEADER ======================== -->
+<!-- =================================================== -->
 
+<header class="fixed w-full top-0 z-50 bg-slate-900/80 border-b border-white/10 backdrop-blur-lg">
+  <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+
+    <div class="flex items-center gap-10">
+
+      <!-- Logo -->
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white">I</div>
-        <span class="text-2xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-400">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-400 to-blue-600 
+                    flex items-center justify-center text-white text-xl font-black shadow-lg shadow-cyan-500/30">
+          I
+        </div>
+
+        <span class="text-2xl font-black uppercase tracking-tight text-transparent 
+                     bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
           INOVA CNH
         </span>
       </div>
 
-      <a href="index.html" class="text-[12px] font-black uppercase hover:text-cyan-400">
-        Voltar ao início
+      <!-- SEU NAV COMPLETO E INALTERADO -->
+      <nav class="hidden lg:flex gap-8">
+
+        <!-- EMPRESA -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+            EMPRESA 
+            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" 
+                 stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 
+                      rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 
+                      group-hover:visible transition-all duration-300 shadow-2xl z-50">
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">Quem Somos</a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">Segurança e Legalidade</a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">Contatos</a>
+          </div>
+        </div>
+
+        <!-- INSTRUTORES -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 
+                         transition-all uppercase tracking-widest">
+            INSTRUTORES
+            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" 
+                 stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 
+                      rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 
+                      group-hover:visible transition-all duration-300 shadow-2xl z-50">
+            <a href="#instrutores" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">
+              Seja um Parceiro
+            </a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">
+              Requisitos Técnicos
+            </a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">
+              Vantagens e Ganhos
+            </a>
+          </div>
+        </div>
+
+        <!-- ALUNOS -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
+            ALUNOS 
+            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none"
+                 stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 
+                      rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 
+                      group-hover:visible transition-all duration-300 shadow-2xl z-50">
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">Primeira Habilitação</a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">Simulados Online</a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">Agendar Aulas</a>
+          </div>
+        </div>
+
+        <!-- PARCERIAS -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-[11px] font-black uppercase hover:text-cyan-400">
+            PARCERIAS 
+            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none"
+                 stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 
+                      rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 
+                      group-hover:visible transition-all duration-300 shadow-2xl z-50">
+            <a href="#" class="block px-4 py-2 text-[10px] uppercase font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg">Afiliados</a>
+            <a href="#" class="block px-4 py-2 text-[10px] uppercase font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg">Publicidade e Propaganda</a>
+            <a href="#" class="block px-4 py-2 text-[10px] uppercase font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg">Imprensa</a>
+          </div>
+        </div>
+
+        <!-- AJUDA -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 text-[11px] font-black uppercase hover:text-cyan-400 transition-all tracking-widest">
+            AJUDA 
+            <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none"
+                 stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3"
+                    d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+
+          <div class="absolute top-full left-0 mt-2 w-56 p-2 bg-slate-800 border border-white/10 
+                      rounded-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                      transition duration-300 shadow-2xl z-50">
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">
+              FAQ
+            </a>
+            <a href="#" class="block px-4 py-2 text-[10px] font-bold uppercase hover:bg-white/5 hover:text-cyan-400 rounded-lg">
+              Ouvidoria
+            </a>
+          </div>
+        </div>
+
+      </nav>
+    </div>
+
+    <!-- LOGIN / CADASTRO -->
+    <div class="flex items-center gap-6">
+      <a href="cadastro.html" class="text-[12px] uppercase font-black hover:text-cyan-400 hover:scale-110 transition">Cadastro</a>
+
+      <a href="login.html">
+        <button class="px-6 py-2.5 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 text-[11px] uppercase 
+                       font-black text-slate-900 shadow-lg shadow-cyan-500/30 hover:scale-105 transition">
+          Login
+        </button>
       </a>
     </div>
-  </header>
 
-  <!-- CONTEÚDO -->
-  <main class="max-w-3xl mx-auto px-6 pt-32 pb-20">
+  </div>
+</header>
 
-    <h1 class="text-4xl font-black text-center mb-12 tracking-tight">
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
-        Dúvidas Frequentes
-      </span>
-    </h1>
 
-    <!-- ACORDEÃO PROFISSIONAL -->
-    <div class="space-y-4">
+<!-- =================================================== -->
+<!-- ==================== CONTEÚDO ===================== -->
+<!-- =================================================== -->
 
-      <!-- PERGUNTAS OFICIAIS E COMPLETAS (20) -->
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          1. O que é a INOVA CNH?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          A INOVA CNH é uma plataforma que conecta alunos a instrutores credenciados
-          conforme a Resolução Contran 1.020/2025, permitindo tirar CNH sem CFC presencial.
-        </p>
-      </details>
+<section class="pt-40 pb-32">
+  <div class="max-w-5xl mx-auto px-6">
+    
+    <div class="blur-card p-12 rounded-[2.5rem]">
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          2. A CNH emitida é válida como uma CNH normal?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim. A CNH é emitida pelo DETRAN do seu estado. O processo apenas é diferente,
-          mas o documento final é 100% oficial e válido nacionalmente.
-        </p>
-      </details>
+      <h1 class="text-4xl font-black uppercase tracking-tight mb-10">Perguntas Frequentes (FAQ)</h1>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          3. Preciso ir ao DETRAN presencialmente?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim. Apenas para: biometria, exames, prova teórica e prova prática.
-          Todo o restante ocorre via plataforma e instrutor.
-        </p>
-      </details>
+      <p class="text-slate-300 text-lg leading-relaxed mb-10">
+        Aqui você encontra respostas para as dúvidas mais comuns sobre nossos serviços,
+        processos, atendimento e funcionamento geral da INOVA CNH.
+      </p>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          4. Como funciona o processo sem autoescola?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Você faz as aulas teóricas online e as aulas práticas com instrutor credenciado.
-          Não existe mais a obrigatoriedade de CFC presencial conforme nova legislação.
-        </p>
-      </details>
+      <!-- PERGUNTAS FREQUENTES — COMPLEMENTO -->
+<div class="space-y-10">
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          5. Os instrutores são credenciados no DETRAN?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim. Todos os profissionais passam por verificação e possuem credenciamento ativo.
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">Quantas aulas práticas são realmente necessárias?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Apesar de a legislação ter reduzido a carga horária mínima obrigatória para apenas 
+      <strong class="text-white">2 aulas práticas</strong>, isso não significa que o aluno estará preparado com tão pouco.
+      A INOVA CNH, seguindo princípios de segurança viária, recomenda uma média de 
+      <strong class="text-white">10 a 15 aulas</strong> para quem nunca teve contato com direção.
+    </p>
+    <p class="text-slate-300 leading-relaxed mt-3">
+      Antes da mudança, a exigência mínima era de 20 aulas, e mesmo assim, a taxa de reprovação 
+      no Brasil girava em torno de <strong class="text-white">70%</strong>. Ou seja, fazer poucas aulas reduz drasticamente as chances 
+      de aprovação e pode gerar gastos adicionais com reagendamentos e novas provas.
+    </p>
+    <p class="text-slate-300 leading-relaxed mt-3">
+      Por isso, recomendamos seguir as orientações do instrutor e praticar até adquirir 
+      segurança, controle emocional, noção de espaço e domínio total do veículo.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          6. Quanto custa tirar a CNH pela plataforma?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          O valor depende da sua região, mas pode ser até 70% mais barato
-          que autoescolas tradicionais.
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">Posso escolher quantas aulas práticas vou fazer?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Sim. Após cumprir as <strong class="text-white">2 aulas mínimas obrigatórias</strong>, o aluno tem liberdade para selecionar 
+      quantas aulas desejar. O sistema da INOVA CNH permite contratar e agendar aulas de forma 
+      flexível conforme sua disponibilidade e necessidade de aprendizado.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          7. Quais documentos preciso para iniciar?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Apenas RG, CPF e comprovante de endereço.
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">O que mudou no exame de direção em 2026?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      A partir de 2026, o exame passou por importantes atualizações para refletir a direção moderna 
+      e reduzir reprovações injustas. Entre as principais mudanças:
+    </p>
+    <ul class="mt-4 space-y-2 text-slate-300 list-disc ml-6">
+      <li><strong class="text-white">Novo limite de pontos:</strong> A reprovação agora só ocorre ao ultrapassar 
+      <strong class="text-white">10 pontos</strong> (antes eram apenas 3).</li>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          8. Posso escolher meu instrutor?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim! Você escolhe pelo preço, avaliações e disponibilidade.
-        </p>
-      </details>
+      <li><strong class="text-white">Fim do erro eliminatório direto:</strong> Diversas faltas que reprovavam imediatamente 
+      agora foram convertidas em pontuação cumulativa.</li>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          9. Como funciona o pagamento?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Os pagamentos são feitos pela plataforma, protegidos por ambiente SSL e LGPD.
-        </p>
-      </details>
+      <li><strong class="text-white">Flexibilização da baliza:</strong> Em estados como MG, o exame está focando mais na 
+      condução real e menos na precisão extrema da baliza entre estacas.</li>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          10. A plataforma oferece suporte?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim. Suporte por WhatsApp e e-mail durante todo o processo.
-        </p>
-      </details>
+      <li><strong class="text-white">Uso de carros automáticos:</strong> Agora o candidato pode escolher realizar o exame em 
+      um veículo automático, eliminando falhas comuns como deixar o carro “morrer”.</li>
+    </ul>
+  </div>
 
-      <!-- +10 PERGUNTAS PROFISSIONAIS -->
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">Se eu fizer aula em carro automático, minha CNH vale apenas para carros automáticos?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Não. Diferente de alguns países, no Brasil a CNH emitida continua sendo válida tanto para veículos 
+      manuais quanto automáticos. O tipo de câmbio usado no exame não limita a categoria.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          11. Quanto tempo leva para tirar a CNH?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          A média dos alunos varia entre 30 e 60 dias.
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">Posso treinar baliza antes de fazer aulas com o instrutor?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Sim, mas recomendamos que seja acompanhado de um instrutor credenciado.  
+      Embora a baliza tenha sido flexibilizada, ainda é necessária técnica para evitar perda de pontos.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          12. O que acontece se eu reprovar?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Você pode remarcar a prova e realizar novas aulas com o instrutor .
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">Por que a taxa de reprovação era tão alta antes de 2026?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Porque o sistema antigo reprovava imediatamente por pequenos erros, muitos deles comuns 
+      em candidatos iniciantes. Além disso, o número mínimo de aulas era inadequado para alguns perfis 
+      de alunos, gerando baixa preparação prática.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          13. Posso cancelar o processo?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim, conforme as políticas da plataforma e do DETRAN.
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">Fazer mais aulas realmente aumenta minhas chances de passar?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Sim e MUITO.  
+      Segundo levantamentos nacionais, candidatos que fazem entre <strong class="text-white">10 e 15 aulas</strong> têm 
+      chances até <strong class="text-white">4 vezes maiores</strong> de serem aprovados na primeira tentativa.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          14. Como funcionam as aulas práticas?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          As aulas são agendadas diretamente na plataforma.
-        </p>
-      </details>
+  <div>
+    <h3 class="text-xl font-bold text-cyan-400 mb-2">A INOVA CNH segue normas oficiais?</h3>
+    <p class="text-slate-300 leading-relaxed">
+      Sim! Nosso modelo está totalmente alinhado à 
+      <strong class="text-white">Resolução Senatran nº 1.020/2025</strong>, que trata do treinamento com instrutores autônomos 
+      credenciados para categorias A e B, ampliando a liberdade do candidato e reduzindo a burocracia.
+    </p>
+  </div>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          15. As provas são presenciais?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim. Provas teórica e prática são realizadas no DETRAN.
-        </p>
-      </details>
+</div>
+</section>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          16. Posso escolher horário das aulas?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim, conforme disponibilidade do instrutor.
-        </p>
-      </details>
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          17. É possível parcelar?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim é possível o parcelamento, o aluno tem a comodidade de efetuar o pagamento parcelado.
-        </p>
-      </details>
+<!-- =================================================== -->
+<!-- ===================== RODAPÉ ====================== -->
+<!-- =================================================== -->
 
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          18. O instrutor acompanha no dia da prova?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim, o instrutor auxilia e orienta durante todo o processo.
-        </p>
-      </details>
-
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          19. A plataforma é autorizada?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Sim, a plataforma segue a legislação vigente com total conformidade com a Res. 1.020/2025.
-        </p>
-      </details>
-
-      <details class="bg-white/5 border border-white/10 rounded-2xl p-5">
-        <summary class="text-lg font-bold text-cyan-400 flex justify-between items-center">
-          20. Como falar com suporte?
-          <span class="text-white text-xl">+</span>
-        </summary>
-        <p class="text-slate-300 mt-4 text-sm leading-relaxed">
-          Entre em contato via WhatsApp na página principal ou pelo e-mail da ouvidoria.
-        </p>
-      </details>
-
-    </div>
-
-  </main>
-
-  <!-- RODAPÉ IGUAL AO INDEX -->
+<!-- FOOTER -->
   <footer class="py-20 bg-slate-950 border-t border-white/5 relative">
     <div class="max-w-7xl mx-auto px-6">
-
       <div class="flex flex-wrap justify-center items-center gap-12 mb-12 border-b border-white/5 pb-12">
         <div class="flex flex-col items-center gap-2">
-          <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white font-black text-[10px]">SSL</div>
-          <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Ambiente Seguro</span>
+            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">SSL</div>
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Ambiente Seguro</span>
         </div>
-
         <div class="flex flex-col items-center gap-2">
-          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-[10px]">LGPD</div>
-          <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Dados Protegidos</span>
+            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">LGPD</div>
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Dados Protegidos</span>
         </div>
-
         <div class="flex flex-col items-center gap-2">
-          <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center text-white font-black text-lg">✓</div>
-          <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Site Verificado</span>
+            <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg">✓</div>
+            <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Site Verificado</span>
         </div>
       </div>
 
       <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-
         <div class="text-center md:text-left space-y-1">
+          <!-- RODAPÉ ATUALIZADO E MAIS CLARO -->
           <p class="text-slate-300 text-[10px] uppercase tracking-widest font-black">Grupo Inova License Technologies Inc.</p>
           <p class="text-slate-300 text-[10px] uppercase tracking-widest">© 2026 INOVA CNH. Todos os direitos reservados.</p>
           <p class="text-slate-400 text-[10px] uppercase tracking-widest pt-2">CNPJ: 00.000.000/0000-00</p>
         </div>
-
         <div class="relative flex items-center">
-
-          <svg class="absolute -top-2 -right-2 w-5 h-5 z-20" viewBox="0 0 24 24" fill="none">
-            <path d="M12 17V15M7 10H17C18.1046 10 19 10.8954 19 12V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V12C5 10.8954 5.89543 10 7 10ZM12 3C9.23858 3 7 5.23858 7 8V10H17V8C17 5.23858 14.7614 3 12 3Z"
-              stroke="url(#gold_grad)" stroke-width="3" stroke-linecap="round" />
-            <defs>
-              <linearGradient id="gold_grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#bf953f" />
-                <stop offset="50%" stop-color="#fcf6ba" />
-                <stop offset="100%" stop-color="#aa771c" />
-              </linearGradient>
-            </defs>
-          </svg>
-
-          <div class="golden-seal golden-text">Site<br>Confiável<br>2026</div>
-
-        </div>
-
-      </div>
+            <svg class="absolute -top-2 -right-2 w-5 h-5 z-20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 17V15M7 10H17C18.1046 10 19 10.8954 19 12V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V12C5 10.8954 5.89543 10 7 10ZM12 3C9.23858 3 7 5.23858 7 8V10H17V8C17 5.23858 14.7614 3 12 3Z" stroke="url(#gold_grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <defs><linearGradient id="gold_grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#bf953f"/><stop offset="50%" stop-color="#fcf6ba"/><stop offset="100%" stop-color="#aa771c"/></linearGradient></defs>
+            </svg>
+           <div class="golden-seal golden-text text-center flex items-center justify-center">
+  Site<br>Confiável<br>2026
+</div>
     </div>
   </footer>
 
-</body>
+  <!-- BOTÃO WHATSAPP FLUTUANTE -->
+  <a href="https://wa.me/5531997210815" target="_blank" class="fixed bottom-6 right-6 z-[100] group">
+    <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 group-hover:hidden"></div>
+    <div class="relative bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/40 hover:scale-110 transition-all duration-300">
+      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </div>
+    <span class="absolute right-20 top-1/2 -translate-y-1/2 bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity shadow-xl whitespace-nowrap pointer-events-none">
+      Fale Conosco!
+    </span>
+  </a>
 
+  <!-- SCRIPT DE REGISTRO DO PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('Service Worker registrado com sucesso!'))
+          .catch(err => console.log('Erro ao registrar Service Worker:', err));
+      });
+    }
+  </script>
+
+</body>
 </html>
