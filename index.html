@@ -258,5 +258,47 @@
       document.getElementById('cookie-banner').style.display = 'none';
     });
   </script>
+<!-- BIBLIOTECA DO SUPABASE (O MOTOR) -->
+<script src="https://cdn.jsdelivr.net"></script>
+
+<script>
+  // ATENÇÃO: Substitua as frases abaixo pelas suas chaves reais do Supabase
+  // Elas estão em: Settings (Engrenagem) > API
+  const S_URL = 'https://uwoikshhnviyjaqzhlso.supabase.co'
+  const S_KEY = 'sb_publishable_whuFu7QuHIxHz-kHyAaEAQ_3y9LPbj6'
+  
+  const _supabase = supabase.createClient(S_URL, S_KEY)
+
+  const form = document.getElementById('form-instrutor')
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const btn = e.target.querySelector('button')
+      btn.innerText = 'ENVIANDO...'
+      btn.disabled = true
+
+      const dados = {
+        nome: document.getElementById('instrutor-nome').value,
+        whatsapp: document.getElementById('instrutor-whatsapp').value,
+        cidade: document.getElementById('instrutor-cidade').value,
+        categoria: document.getElementById('instrutor-categoria').value,
+        detran: document.getElementById('instrutor-detran').value
+      }
+
+      const { error } = await _supabase.from('instrutores').insert([dados])
+
+      if (error) {
+        console.error(error)
+        alert('Erro ao salvar no banco. Verifique se a tabela "instrutores" foi criada.')
+        btn.innerText = 'TENTAR NOVAMENTE'
+        btn.disabled = false
+      } else {
+        form.reset()
+        document.getElementById('sucesso-instrutor').classList.remove('hidden')
+        btn.innerText = 'CADASTRADO COM SUCESSO!'
+      }
+    })
+  }
+</script>
 </body>
 </html>
