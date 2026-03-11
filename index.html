@@ -260,46 +260,52 @@
   </script>
 <!-- BIBLIOTECA DO SUPABASE (O MOTOR) -->
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 <script>
-  // ATENÇÃO: Substitua as frases abaixo pelas suas chaves reais do Supabase
-  // Elas estão em: Settings (Engrenagem) > API
   const S_URL = 'https://ejilmygsfmyysysrckah.supabase.co'
   const S_KEY = 'sb_publishable_xUNR7PvBmVJqdrkBlbxwNQ_eT-0fhPY'
-  
   const _supabase = supabase.createClient(S_URL, S_KEY)
 
-  const form = document.getElementById('form-instrutor')
+  // Seleciona o primeiro formulário que encontrar na página
+  const form = document.querySelector('form')
+
   if (form) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
-      const btn = e.target.querySelector('button')
+      const btn = form.querySelector('button[type="submit"]') || form.querySelector('button')
+      
       btn.innerText = 'ENVIANDO...'
       btn.disabled = true
 
+      // Pega os dados direto do que foi digitado, sem depender de IDs complexos
+      const formData = new FormData(form)
       const dados = {
-        nome: document.getElementById('instrutor-nome').value,
-        whatsapp: document.getElementById('instrutor-whatsapp').value,
-        cidade: document.getElementById('instrutor-cidade').value,
-        categoria: document.getElementById('instrutor-categoria').value,
-        detran: document.getElementById('instrutor-detran').value
+        nome: form.querySelector('[placeholder*="Nome"]')?.value || form.querySelector('input:nth-of-type(1)')?.value,
+        whatsapp: form.querySelector('[placeholder*="WhatsApp"]')?.value || form.querySelector('input:nth-of-type(2)')?.value,
+        cidade: form.querySelector('[placeholder*="Cidade"]')?.value || form.querySelector('input:nth-of-type(3)')?.value,
+        categoria: form.querySelector('select')?.value || 'Não informada',
+        detran: form.querySelector('[placeholder*="Detran"]')?.value || 'Não informado'
       }
+
+      console.log('Tentando enviar dados:', dados)
 
       const { error } = await _supabase.from('instrutores').insert([dados])
 
       if (error) {
-        console.error(error)
-        alert('Erro ao salvar no banco. Verifique se a tabela "instrutores" foi criada.')
+        console.error('Erro do Supabase:', error)
+        alert('Erro: ' + error.message)
         btn.innerText = 'TENTAR NOVAMENTE'
         btn.disabled = false
       } else {
         form.reset()
-        document.getElementById('sucesso-instrutor').classList.remove('hidden')
-        btn.innerText = 'CADASTRADO COM SUCESSO!'
+        alert('CADASTRADO COM SUCESSO!')
+        btn.innerText = 'CADASTRADO!'
+        btn.disabled = false
+        setTimeout(() => { btn.innerText = 'CADASTRAR' }, 3000)
       }
     })
   }
 </script>
 </body>
 </html>
+
 
