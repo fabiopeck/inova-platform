@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>INOVA CNH | Habilitação Independente</title>
   
-  <!-- CONFIGURAÇÕES PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="apple-touch-icon" href="https://generated-images.adapta.one/fabiopeck86%40gmail.com/019bb1fb-47cc-74bc-9b65-ec1f38cd31fe/2026-01-12T13-23-42-973Z_A_professional_mobile_app_icon_for_INOVA_CNH_Th.png">
-
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='url(%23g)'/><defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%25' stop-color='%2322d3ee'/><stop offset='100%25' stop-color='%232563eb'/></linearGradient></defs><text x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black' font-weight='900' font-size='18' fill='white'>I</text></svg>">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -40,27 +39,6 @@
       background: rgba(255, 255, 255, 0.03);
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .golden-text {
-      background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .golden-seal {
-      border: 2px solid #bf953f;
-      padding: 10px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 8px;
-      font-weight: 900;
-      width: 65px;
-      height: 65px;
-      text-transform: uppercase;
-      box-shadow: 0 0 20px rgba(191, 149, 63, 0.4);
-      line-height: 1.1;
-    }
     .best-choice-card {
       background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(6, 182, 212, 0.2));
       border: 1px solid rgba(6, 182, 212, 0.4);
@@ -70,121 +48,32 @@
 </head>
 <body class="text-white overflow-x-hidden">
 
-  <!-- HEADER -->
   <header class="fixed w-full top-0 z-50 bg-slate-900/80 backdrop-blur-lg border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <div class="flex items-center gap-10">
-        <div class="flex items-center gap-3">
+        <a href="index.html" class="flex items-center gap-3">
           <div class="w-10 h-10 bg-gradient-to-tr from-cyan-400 to-blue-600 rounded-xl flex items-center justify-center font-black text-white shadow-lg shadow-cyan-500/20">I</div>
           <span class="text-2xl font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 leading-none uppercase">INOVA CNH</span>
-        </div>
-        
-        <nav class="hidden lg:flex gap-8">
-
-  <!-- EMPRESA -->
-  <div class="relative group">
-    <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
-      EMPRESA <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-    </button>
-    <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
-      
-      <a href="quem-somos.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Quem Somos</a>
-      
-      <a href="seguranca-e-legalidade.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">
-        Segurança e Legalidade
-      </a>
-      
-      <a href="contato.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Contatos</a>
-
-    </div>
-  </div>
-
-  <!-- INSTRUTORES -->
-  <div class="relative group">
-    <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
-      INSTRUTORES <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-    </button>
-    <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
-
-      <a href="painel-do-instrutor.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Seja um Parceiro</a>
-
-      <a href="requisitos.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Requisitos Técnicos</a>
-      
-      <a href="passo-a-passo.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Vantagens e Ganhos</a>
-
-    </div>
-  </div>
-
-  <!-- ALUNOS -->
-  <div class="relative group">
-    <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
-      ALUNOS <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-    </button>
-    <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
-
-      <a href="primeira-habilitacao.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Primeira Habilitação</a>
-
-      <a href="simulados.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Simulados Online</a>
-
-      <a href="agendar-aulas.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Agendar Aulas</a>
-
-    </div>
-  </div>
-
-  <!-- PARCERIAS -->
-  <div class="relative group">
-    <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
-      PARCERIAS <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-    </button>
-    <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
-
-      <a href="painel-do-instrutor.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Afiliados</a>
-
-      <a href="painel-admin.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Publicidade e Propaganda</a>
-
-      <a href="dashboard.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Imprensa</a>
-
-    </div>
-  </div>
-
-  <!-- AJUDA -->
-  <div class="relative group">
-    <button class="flex items-center gap-1 text-[11px] font-black hover:text-cyan-400 transition-all uppercase tracking-widest">
-      AJUDA <svg class="w-3 h-3 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7"></path></svg>
-    </button>
-    <div class="absolute top-full left-0 mt-2 w-56 bg-slate-800 border border-white/10 rounded-xl p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl z-50">
-
-      <a href="FAQ.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Dúvidas Frequentes (FAQ)</a>
-
-      <a href="contato.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Central de atendimento</a>
-
-      <a href="contato.html" class="block px-4 py-2 text-[10px] font-bold hover:bg-white/5 hover:text-cyan-400 rounded-lg uppercase">Ouvidoria</a>
-
-    </div>
-  </div>
-
-</nav>
+        </a>
       </div>
 
       <div class="flex items-center gap-6">
-        <a href="#" class="inline-block text-[12px] font-black hover:text-cyan-400 hover:scale-110 transition-all uppercase">Cadastro</a>
-        <button class="bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-2.5 rounded-full text-[11px] font-black text-[#020617] hover:scale-105 transition-all shadow-lg shadow-cyan-500/30 uppercase">Login</button>
+        <a href="cadastro.html" class="inline-block text-[12px] font-black text-white hover:text-cyan-400 hover:scale-110 transition-all uppercase">Cadastro</a>
+        <a href="login.html" class="bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-2.5 rounded-full text-[11px] font-black text-[#020617] hover:scale-105 transition-all shadow-lg shadow-cyan-500/30 uppercase">Login</a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
   <section class="relative min-h-screen flex items-center pt-24 hero-mask overflow-hidden bg-deep">
     <div class="max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
       <div class="flex flex-col justify-center">
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6">
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 uppercase">CNH Sem Autoescola.</span>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 uppercase">CNH Sem Autoescola</span>
         </h1>
-        <h2 class="text-2xl md:text-3xl font-bold text-white mb-10 leading-tight">Plataforma de Instrutores de Trânsito<br>Credenciados Pelos Órgãos Oficiais.</h2>
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-10 leading-tight">Plataforma de Instrutores de Trânsito<br>Credenciados Pelos Órgãos Oficiais</h2>
         <button class="w-fit bg-white text-slate-900 px-12 py-5 rounded-2xl font-black text-xl hover:bg-cyan-400 hover:scale-105 transition-all shadow-2xl">INICIAR AGORA</button>
       </div>
 
-      <!-- MOCKUP CELULAR -->
       <div class="hidden lg:flex justify-center items-center">
         <div class="floating-phone relative bg-slate-800 w-[280px] h-[620px] rounded-[3rem] flex flex-col items-center p-8 border-[4px] border-white/90 shadow-2xl overflow-hidden">
           <div class="absolute top-0 w-32 h-6 bg-slate-900 rounded-b-2xl z-20"></div>
@@ -206,122 +95,83 @@
     </div>
   </section>
 
-  <!-- COMPARATIVO DE CUSTOS -->
-  <section id="dados" class="py-32 bg-layer relative">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl md:text-4xl font-black uppercase text-white tracking-tighter">Comparativo de Custos 2026</h2>
-        <p class="text-slate-400 mt-4 font-medium italic">Análise técnica do GRUPO INOVA LICENSE. Fonte: Senatran.</p>
-      </div>
-      <div class="grid lg:grid-cols-3 gap-8">
-        <div class="data-card p-10 rounded-[2.5rem]">
-          <span class="text-slate-500 font-bold text-xs uppercase block mb-6">Média nos Estados</span>
-          <div class="space-y-4 text-sm">
-            <div class="flex justify-between border-b border-white/5 pb-2"><span>Minas Gerais</span><span class="text-red-500 font-black">R$ 3.968</span></div>
-            <div class="flex justify-between border-b border-white/5 pb-2"><span>São Paulo</span><span class="text-red-500 font-black">R$ 3.550</span></div>
-            <div class="flex justify-between border-b border-white/5 pb-2"><span>Rio de Janeiro</span><span class="text-red-500 font-black">R$ 3.820</span></div>
-            <div class="flex justify-between border-b border-white/5 pb-2"><span>Santa Catarina</span><span class="text-red-500 font-black">R$ 3.400</span></div>
+  <section class="py-32 bg-layer border-t border-white/5">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="relative inline-block mb-6">
+        <div class="absolute inset-0 bg-red-600 blur-3xl opacity-30 animate-pulse rounded-full scale-150"></div>
+        <div class="relative bg-gradient-to-r from-red-700 via-red-500 to-red-700 border-2 border-red-400 px-10 py-5 rounded-2xl shadow-[0_0_60px_rgba(239,68,68,0.8)] animate-pulse">
+          <div class="flex items-center justify-center gap-4">
+            <span class="w-4 h-4 bg-white rounded-full animate-ping opacity-90"></span>
+            <span class="text-white font-black text-3xl md:text-5xl uppercase tracking-widest [text-shadow:0_0_30px_#fff]">⚠️ VAGAS LIMITADAS ⚠️</span>
+            <span class="w-4 h-4 bg-white rounded-full animate-ping opacity-90"></span>
           </div>
         </div>
-        <div class="data-card p-10 rounded-[2.5rem] border-red-500/20 relative">
-          <div class="absolute top-0 right-0 bg-red-600 text-white px-4 py-1 font-black text-[9px] uppercase rounded-bl-xl">Alerta de Custo</div>
-          <span class="text-red-500 font-bold text-xs uppercase block mb-2">Média Nacional</span>
-          <h3 class="text-5xl font-black my-6 text-red-500 tracking-tighter">R$ 3.968,15</h3>
-          <p class="text-sm font-medium leading-relaxed text-slate-400">77% do valor é retido por intermediários e taxas administrativas.</p>
-          <p class="text-[11px] text-slate-400 mt-6 leading-relaxed">
-          <p class="text-sm opacity-90 leading-relaxed font-medium text-slate-200">Obs: Ultrapassando R$5.000,00 em alguns Estados.</p>
-        </div>
-        <div class="bg-gradient-to-br from-blue-600/20 to-cyan-500/20 p-10 rounded-[2.5rem] scale-105 border border-cyan-500/40 relative z-10">
-          <div class="absolute top-0 right-0 bg-cyan-400 text-slate-900 px-4 py-1 font-black text-[9px] uppercase rounded-bl-xl">Melhor Escolha</div>
-          <span class="text-cyan-400 font-bold text-xs uppercase block mb-2">MÉDIA INOVAcnh</span>
-          <h3 class="text-5xl font-black my-6 tracking-tighter text-white">R$ 787,00</h3>
-          <p class="text-sm opacity-90 leading-relaxed font-medium text-slate-200">80% abaixo do valor cobrado atualmente. Valor justo e transparente.</p>
-          <p class="text-sm opacity-90 leading-relaxed font-medium text-slate-200 mt-6">
-  Obs: Documentação e 2 aulas obrigatórias.
-</p>
+      </div>
 
-        </div>
+      <div class="relative mx-auto max-w-3xl mb-12">
+        <div class="relative bg-gradient-to-b from-red-900/90 via-red-800/90 to-red-900/90 border-2 border-red-500 rounded-3xl px-8 py-10 shadow-[0_0_80px_rgba(239,68,68,0.6)]">
+          <p class="text-red-200 text-sm font-black uppercase tracking-[0.3em] mb-4">🔥 Oferta Exclusiva - Encerra nos 1.000 cadastros</p>
+          <h2 class="text-4xl md:text-6xl font-black uppercase leading-tight mb-6 text-white">0% DE TAXA POR 30 DIAS</h2>
+          <p class="text-white text-xl md:text-2xl font-black mb-6">OFERTA para os <span class="text-yellow-300">1.000</span> primeiros em <span class="text-yellow-300">Belo Horizonte</span></p>
+          <div class="bg-black/40 border border-red-500/50 rounded-2xl px-6 py-4">
+            <p class="text-white font-black text-2xl mb-3"><span id="vagas-counter">321</span> de 1.000 vagas preenchidas</p>
+            <div class="w-full bg-white/10 rounded-full h-4 overflow-hidden">
+              <div class="bg-gradient-to-r from-red-600 to-red-400 h-4 rounded-full" style="width: 32.1%"></div>
+            </div>
+          </div>
         </div>
       </div>
+
+     <div class="grid md:grid-cols-3 gap-6 my-12">
+      <div class="best-choice-card p-6 rounded-2xl">
+        <div class="text-3xl mb-3">💰</div>
+        <h4 class="font-black text-white mb-2">Receba Via Pix</h4>
+        <p class="text-slate-400 text-sm">Pagamento direto após confirmação da aula e validação no sistema oficial</p>
+      </div>
+      <div class="best-choice-card p-6 rounded-2xl">
+        <div class="text-3xl mb-3">📱</div>
+        <h4 class="font-black text-white mb-2">Alunos Prontos</h4>
+        <p class="text-slate-400 text-sm">A plataforma envia alunos direto para você</p>
+      </div>
+      <div class="best-choice-card p-6 rounded-2xl">
+        <div class="text-3xl mb-3">📅</div>
+        <h4 class="font-black text-white mb-2">Sua Agenda</h4>
+        <p class="text-slate-400 text-sm">Você define dias, horários e região de atuação</p>
+      </div>
+    </div>
+
+    <form id="form-instrutor" class="bg-white/5 border border-white/10 rounded-[2rem] p-10 text-left max-w-xl mx-auto">
+      <h3 class="text-xl font-black text-white text-center mb-8 uppercase tracking-tight">✅ Garantir Minha Vaga Agora</h3>
+      <div class="space-y-4">
+        <input type="text" id="instrutor-nome" placeholder="Seu nome completo" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:border-cyan-400 transition">
+        <input type="tel" id="instrutor-whatsapp" placeholder="WhatsApp com DDD" required class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:border-cyan-400 transition">
+        <select id="instrutor-cidade" class="w-full bg-slate-800 border border-white/10 rounded-xl px-4 py-4 text-white focus:border-cyan-400 transition">
+          <option value="">Selecione sua cidade</option>
+          <option value="Belo Horizonte - MG">Belo Horizonte - MG</option>
+          <option value="Contagem - MG">Contagem - MG</option>
+          <option value="Betim - MG">Betim - MG</option>
+          <option value="São Paulo - SP">São Paulo - SP</option>
+          <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
+          <option value="Outra cidade">Outra cidade</option>
+        </select>
+        <select id="instrutor-categoria" class="w-full bg-slate-800 border border-white/10 rounded-xl px-4 py-4 text-white focus:border-cyan-400 transition">
+          <option value="">Categoria que ministra</option>
+          <option value="A">Categoria A Moto</option>
+          <option value="B">Categoria B Carro</option>
+          <option value="AB">Categorias A e B</option>
+        </select>
+        <input type="text" id="instrutor-detran" placeholder="Nº de credenciamento DETRAN" class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-white focus:border-cyan-400 transition">
+        <button type="submit" class="w-full bg-gradient-to-r from-cyan-400 to-blue-600 py-5 rounded-2xl font-black text-lg text-slate-900 hover:scale-105 transition-all shadow-2xl shadow-cyan-500/30 uppercase">🚀 QUERO SER INSTRUTOR PARCEIRO</button>
+      </div>
+      <div id="sucesso-instrutor" class="hidden mt-6 bg-green-500/10 border border-green-500/30 rounded-xl p-4 text-center">
+        <p class="text-green-400 font-black">✅ Cadastro recebido!</p>
+      </div>
+      <p class="text-center text-slate-500 text-xs mt-6">🔒 Seus dados estão protegidos pela LGPD.</p>
+    </form>
     </div>
   </section>
 
-  <!-- SEÇÃO: POR QUE TIRAR CNH... (ESTILO MELHOR ESCOLHA) -->
-  <section class="py-32 bg-deep border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-20">
-        <h2 class="text-4xl md:text-5xl font-black uppercase tracking-tighter mb-6">Por que tirar CNH com instrutor autônomo credenciado?</h2>
-        <div class="bg-cyan-400/10 border border-cyan-400/30 p-8 rounded-[2rem] max-w-4xl mx-auto">
-          <p class="text-cyan-400 font-bold text-lg leading-relaxed">
-            <span class="text-white">A Resolução Contran nº 1.020/2025:</span> Aprovada em dezembro de 2025, esta norma encerrou a obrigatoriedade de aulas teóricas e práticas presenciais em Centros de Formação de Condutores (CFCs) para as categorias A e B. Veja as vantagens para alunos e instrutores de trânsito.
-          </p>
-        </div>
-      </div>
-      
-      <div class="grid lg:grid-cols-2 gap-10">
-        <!-- PARA ALUNOS (ESTILO MELHOR ESCOLHA) -->
-        <div class="best-choice-card p-12 rounded-[3rem] relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-cyan-400 text-slate-900 px-6 py-2 font-black text-xs uppercase rounded-bl-2xl">Para Alunos</div>
-          <h3 class="text-3xl font-black mb-12 flex items-center gap-4">Vantagens Exclusivas</h3>
-          <div class="space-y-10">
-            <div class="flex gap-6">
-              <div class="w-14 h-14 bg-cyan-400 text-slate-900 rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-lg shadow-cyan-500/20">⏰</div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Horários Flexíveis</h4>
-                <p class="text-slate-300 leading-relaxed">Agende aulas de direção nos dias e horários que funcionam para você, sem grade fixa de autoescola.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="w-14 h-14 bg-cyan-400 text-slate-900 rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-lg shadow-cyan-500/20">💰</div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">CNH Mais Barata</h4>
-                <p class="text-slate-300 leading-relaxed">Instrutores autônomos integrados a plataforma fazendo você economizar até 80% em relação às autoescolas tradicionais.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="w-14 h-14 bg-cyan-400 text-slate-900 rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-lg shadow-cyan-500/20">🛡️</div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Instrutores Credenciados DETRAN</h4>
-                <p class="text-slate-300 leading-relaxed">Todos os profissionais são instrutores de trânsito autônomos verificados e credenciados pelo DETRAN.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- PARA INSTRUTORES (ESTILO MELHOR ESCOLHA) -->
-        <div class="best-choice-card p-12 rounded-[3rem] relative overflow-hidden">
-          <div class="absolute top-0 right-0 bg-blue-600 text-white px-6 py-2 font-black text-xs uppercase rounded-bl-2xl">Para Instrutores</div>
-          <h3 class="text-3xl font-black mb-12 flex items-center gap-4">Liberdade Profissional</h3>
-          <div class="space-y-10">
-            <div class="flex gap-6">
-              <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-lg shadow-blue-500/20">🚀</div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Autonomia Total</h4>
-                <p class="text-slate-300 leading-relaxed">Trabalhe como instrutor autônomo credenciado na INOVAcnh. Defina seus horários e receba fluxo garantido de alunos.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-lg shadow-blue-500/20">📈</div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Mais Alunos</h4>
-                <p class="text-slate-300 leading-relaxed">Acesse alunos que querem tirar CNH sem autoescola, aumente seus ganhos em até 5x mais em relação ao salário da classe tradicional e tenha liberdade de horários.</p>
-              </div>
-            </div>
-            <div class="flex gap-6">
-              <div class="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center shrink-0 text-2xl shadow-lg shadow-blue-500/20">⭐</div>
-              <div>
-                <h4 class="text-xl font-bold mb-2">Destaque-se</h4>
-                <p class="text-slate-300 leading-relaxed">Construa sua reputação como instrutor de trânsito com avaliações reais de alunos.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- REQUISITOS INSTRUTOR -->
-  <section id="instrutores" class="py-32 bg-layer">
+  <section id="instrutores" class="pt-10 pb-32 bg-layer">
     <div class="max-w-7xl mx-auto px-6">
       <div class="blur-card p-12 rounded-[3rem] grid lg:grid-cols-5 gap-12 items-center">
         <div class="lg:col-span-3">
@@ -341,371 +191,72 @@
             </div>
             <div class="flex items-start gap-4 group">
               <div class="w-8 h-8 bg-cyan-400/10 text-cyan-400 rounded-lg flex items-center justify-center font-black text-xs shrink-0 border border-cyan-400/20 group-hover:bg-cyan-400 group-hover:text-slate-900 transition-all">4</div>
-              <div><h4 class="text-white font-bold text-sm uppercase mb-1">Histórico de Condutor</h4><p class="text-slate-400 text-xs leading-relaxed">Não ter cometido infração gravíssima nos últimos 12 meses e não ter sofrido cassação da CNH.</p></div>
+              <div><h4 class="text-white font-bold text-sm uppercase mb-1">Histórico de Condutor</h4><p class="text-slate-400 text-xs leading-relaxed">Não ter cometido infração gravíssima nos últimos 12 meses.</p></div>
             </div>
             <div class="flex items-start gap-4 group">
               <div class="w-8 h-8 bg-cyan-400/10 text-cyan-400 rounded-lg flex items-center justify-center font-black text-xs shrink-0 border border-cyan-400/20 group-hover:bg-cyan-400 group-hover:text-slate-900 transition-all">5</div>
-              <div><h4 class="text-white font-bold text-sm uppercase mb-1">Formação Específica</h4><p class="text-slate-400 text-xs leading-relaxed">Curso de capacitação (digital/online) e aprovação em avaliação psicológica pedagógica.</p></div>
+              <div><h4 class="text-white font-bold text-sm uppercase mb-1">Formação Específica</h4><p class="text-slate-400 text-xs leading-relaxed">Curso de capacitação e aprovação em avaliação psicológica.</p></div>
             </div>
             <div class="flex items-start gap-4 group">
               <div class="w-8 h-8 bg-cyan-400/10 text-cyan-400 rounded-lg flex items-center justify-center font-black text-xs shrink-0 border border-cyan-400/20 group-hover:bg-cyan-400 group-hover:text-slate-900 transition-all">6</div>
-              <div><h4 class="text-white font-bold text-sm uppercase mb-1">Credenciamento e Autorização</h4><p class="text-slate-400 text-xs leading-relaxed">Registro ativo no Detran e Ministério dos Transportes (com EAR na CNH).</p></div>
+              <div><h4 class="text-white font-bold text-sm uppercase mb-1">Credenciamento e Autorização</h4><p class="text-slate-400 text-xs leading-relaxed">Registro ativo no Detran (com EAR na CNH).</p></div>
             </div>
           </div>
         </div>
         
-        <div class="lg:col-span-2 bg-gradient-to-br from-blue-600/20 to-cyan-500/20 p-10 rounded-[2.5rem] shadow-2xl relative border border-cyan-500/40 text-center flex flex-col justify-center h-full">
+        <div class="lg:col-span-2 bg-gradient-to-br from-blue-600/20 to-cyan-500/20 p-10 rounded-[2.5rem] shadow-2xl border border-cyan-500/40 text-center flex flex-col justify-center h-full">
           <h3 class="text-white font-black text-3xl mb-4 uppercase leading-tight tracking-tighter">Seja seu próprio chefe</h3>
-          <p class="text-cyan-400 font-bold mb-8">Receba via Pix no dia seguinte e tenha liberdade total de agenda.</p>
+          <p class="text-cyan-400 font-bold mb-8">GANHE entre R$6.000,00 e R$9.000,00 com agenda cheia.</p>
           <button class="w-full bg-white text-slate-900 py-5 rounded-2xl font-black text-lg hover:bg-cyan-400 hover:scale-105 transition uppercase">CADASTRAR COMO INSTRUTOR</button>
         </div>
       </div>
     </div>
   </section>
-<!-- REQUISITOS PARA TIRAR SUA CNH -->
-<section id="passo-a-passo" class="py-32 bg-layer border-t border-white/5">
-  <div class="max-w-7xl mx-auto px-6">
 
-    <div class="blur-card p-12 rounded-[3rem] grid lg:grid-cols-5 gap-12 items-start 
-                border border-cyan-400/30 bg-gradient-to-br from-blue-600/20 to-cyan-500/20">
-
-      <!-- LISTA -->
-      <div class="lg:col-span-3">
-        <h2 class="text-4xl font-black mb-10 text-white uppercase tracking-tighter">
-          Requisitos e Documentos para tirar sua CNH
-        </h2>
-
-        <div class="grid gap-6">
-
-          <!-- ITEM PADRÃO INSTRUTOR (AZUL) -->
-          <div class="flex items-start gap-4 group">
-            <div class="w-8 h-8 border border-cyan-400/20 bg-cyan-400/10 
-                        text-cyan-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0 transition-all 
-                        group-hover:bg-cyan-400 group-hover:text-slate-900">
-              1
-            </div>
-            <div>
-              <h4 class="text-white font-bold text-sm uppercase mb-1">
-                Taxa de Inscrição (Detran-MG)
-              </h4>
-              <p class="text-slate-400 text-xs">R$ 115,80 - Emitida via DAE</p>
-            </div>
-          </div>
-
-          <!-- ITEM 2 -->
-          <div class="flex items-start gap-4 group">
-            <div class="w-8 h-8 border border-cyan-400/20 bg-cyan-400/10 
-                        text-cyan-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0 transition-all 
-                        group-hover:bg-cyan-400 group-hover:text-slate-900">
-              2
-            </div>
-            <div>
-              <h4 class="text-white font-bold text-sm uppercase mb-1">Exame Médico</h4>
-              <p class="text-slate-400 text-xs">R$ 90,00 - Clínica credenciada</p>
-            </div>
-          </div>
-
-          <!-- ITEM 3 -->
-          <div class="flex items-start gap-4 group">
-            <div class="w-8 h-8 border border-cyan-400/20 bg-cyan-400/10 
-                        text-cyan-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0 transition-all 
-                        group-hover:bg-cyan-400 group-hover:text-slate-900">
-              3
-            </div>
-            <div>
-              <h4 class="text-white font-bold text-sm uppercase mb-1">Avaliação Psicológica</h4>
-              <p class="text-slate-400 text-xs">R$ 90,00 - Clínica credenciada</p>
-            </div>
-          </div>
-
-          <!-- ITEM 4 -->
-          <div class="flex items-start gap-4 group">
-            <div class="w-8 h-8 border border-cyan-400/20 bg-cyan-400/10 
-                        text-cyan-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0 transition-all 
-                        group-hover:bg-cyan-400 group-hover:text-slate-900">
-              4
-            </div>
-            <div>
-              <h4 class="text-white font-bold text-sm uppercase mb-1">
-                Exame de Legislação (Teórico)
-              </h4>
-              <p class="text-slate-400 text-xs">R$ 115,80 - Emitido via DAE</p>
-            </div>
-          </div>
-
-          <!-- ITEM 5 -->
-          <div class="flex items-start gap-4 group">
-            <div class="w-8 h-8 border border-cyan-400/20 bg-cyan-400/10 
-                        text-cyan-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0 transition-all 
-                        group-hover:bg-cyan-400 group-hover:text-slate-900">
-              5
-            </div>
-            <div>
-              <h4 class="text-white font-bold text-sm uppercase mb-1">
-                2 Aulas Práticas (mínimo)
-              </h4>
-              <p class="text-slate-400 text-xs">R$ 140,00 - Agendadas pela plataforma</p>
-            </div>
-          </div>
-
-          <!-- ITEM 6 -->
-          <div class="flex items-start gap-4 group">
-            <div class="w-8 h-8 border border-cyan-400/20 bg-cyan-400/10 
-                        text-cyan-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0 transition-all 
-                        group-hover:bg-cyan-400 group-hover:text-slate-900">
-              6
-            </div>
-            <div>
-              <h4 class="text-white font-bold text-sm uppercase mb-1">Exame Prático</h4>
-              <p class="text-slate-400 text-xs">R$ 115,80 - Emitido via DAE</p>
-            </div>
-          </div>
-
-          <!-- TOTAL -->
-          <div class="flex items-start gap-4 mt-6 group">
-            <div class="w-8 h-8 border border-green-400/20 bg-green-400/10 
-                        text-green-400 rounded-lg flex items-center justify-center 
-                        font-black text-xs shrink-0">
-              ✔
-            </div>
-            <div>
-              <h4 class="text-green-400 font-black text-lg uppercase mb-1">TOTAL ESTIMADO</h4>
-              <p class="text-green-300 text-xl font-black">R$ 787,00</p>
-            </div>
-          </div>
-
-          <!-- OBS -->
-          <p class="text-[11px] text-slate-400 mt-6 leading-relaxed">
-            <strong class="text-white">OBS:</strong>
-            "Os valores podem sofrer variações de acordo com o Detran de cada Estado da Federação."
-          </p>
+  <footer class="py-20 bg-slate-950 border-t border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="flex flex-wrap justify-center items-center gap-12 mb-12 border-b border-white/5 pb-12">
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white font-black text-[10px]">SSL</div>
+          <span class="text-[9px] font-bold text-slate-400 uppercase">Ambiente Seguro</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-[10px]">LGPD</div>
+          <span class="text-[9px] font-bold text-slate-400 uppercase">Dados Protegidos</span>
+        </div>
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center text-lg shadow-lg">✓</div>
+          <span class="text-[9px] font-bold text-slate-400 uppercase">Site Verificado</span>
         </div>
       </div>
-
-      <!-- CARD AO LADO -->
-      <div class="lg:col-span-2 bg-gradient-to-br from-blue-600/20 to-cyan-500/20 
-                  p-10 rounded-[2.5rem] shadow-2xl border border-cyan-500/40 
-                  text-center flex flex-col justify-center">
-
-        <h3 class="text-white font-black text-3xl mb-4 uppercase">
-          Comece agora
-        </h3>
-
-        <p class="text-cyan-400 font-bold mb-8">
-          Faça seu cadastro e dê início ao processo
-        </p>
-
-        <a href="cadastro.html">
-          <button class="w-full bg-white text-slate-900 py-5 rounded-2xl font-black text-lg
-                        hover:bg-cyan-400 hover:scale-105 transition uppercase">
-            CADASTRAR AGORA
-          </button>
-        </a>
-
+      <p class="text-center text-slate-300 font-bold mb-2">© 2026 INOVA CNH. Todos os direitos reservados.</p>
+      <p class="text-slate-300 text-[10px] uppercase tracking-widest text-center">Endereço: Rua Pernambuco, 1000 – Savassi, Belo Horizonte – MG</p>
+      <p class="text-slate-400 text-[10px] uppercase tracking-widest text-center mt-1">CNPJ: 00.000.000/0000-00</p>
+      <div class="flex justify-center gap-8 mt-8 text-[11px] text-slate-500">
+        <a href="#" class="hover:text-cyan-400 transition">Privacidade</a>
+        <a href="#" class="hover:text-cyan-400 transition">Acessibilidade</a>
+        <a href="#" class="hover:text-cyan-400 transition">Termos</a>
       </div>
-
     </div>
-  </div>
+  </footer>
 
-</section>
-  <!-- 🔧 OVERLAY DE MANUTENÇÃO – ATIVE/DESATIVE QUANDO QUISER -->
-<div id="manutencao-overlay" style="
-  position: fixed;
-  inset: 0;
-  background: rgba(15, 23, 42, 0.92); /* fundo escuro transparente */
-  backdrop-filter: blur(6px); /* desfoca o site ao fundo */
-  z-index: 999999999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: all;
-">
-  <div style="
-    background: rgba(255,255,255,0.05);
-    padding: 40px;
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(12px);
-    max-width: 500px;
-    text-align: center;
-  ">
-    <h1 style="
-      font-size: 32px;
-      font-weight: 900;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #22d3ee, #3b82f6);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    ">🔧 Site em Manutenção</h1>
-
-    <p style="color: #ddd; font-size: 16px; opacity: 0.9; margin-bottom: 10px;">
-      Estamos realizando melhorias para oferecer a melhor experiência.
-    </p>
-    <p style="color: #ddd; font-size: 15px; opacity: 0.7;">
-      Voltamos em instantes!
-    </p>
-  </div>
-</div>
-<!-- 🔧 FIM DO OVERLAY DE MANUTENÇÃO -->
-    <!-- FOOTER -->
-<footer class="py-20 bg-slate-950 border-t border-white/5 relative">
-  <div class="max-w-7xl mx-auto px-6 relative">
-
-    <!-- SELO DOURADO NO TOPO DIREITO (AJUSTE DEFINITIVO) -->
-    <div class="absolute right-0 top-2">
-  <div class="relative flex items-center">
-    <svg class="absolute -top-2 -right-2 w-5 h-5 z-20" viewBox="0 0 24 24" fill="none">
-      <path d="M12 17V15M7 10H17C18.1046 10 19 10.8954 19 12V19C19 20.1046 18.1046 21 17 21H7C5.89543 21 5 20.1046 5 19V12C5 10.8954 5.89543 10 7 10ZM12 3C9.23858 3 7 5.23858 7 8V10H17V8C17 5.23858 14.7614 3 12 3Z" 
-        stroke="url(#gold_grad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      <defs>
-        <linearGradient id="gold_grad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#bf953f"/>
-          <stop offset="50%" stop-color="#fcf6ba"/>
-          <stop offset="100%" stop-color="#aa771c"/>
-        </linearGradient>
-      </defs>
-    </svg>
-
-    <div class="golden-seal golden-text">
-      Site<br>Confiável<br>2026
+  <a href="https://wa.me/5531997210815" target="_blank" class="fixed bottom-6 right-6 z-[100] group">
+    <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 group-hover:hidden"></div>
+    <div class="relative bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all">
+      <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </div>
+  </a>
+
+  <div id="cookie-banner" style="display:none; position:fixed; bottom:0; width:100%; background:#1e293b; color:#fff; padding:15px; text-align:center; border-top:1px solid #334155; z-index:99999;">
+    Este site utiliza cookies essenciais. <button id="accept-cookies" style="margin-left: 10px; background:#0ea5e9; padding:8px 15px; border-radius:8px; font-weight:700; color:#0f172a;">Aceitar</button>
   </div>
-</div>
 
-    <!-- BLOCOS DE SEGURANÇA -->
-    <div class="flex flex-wrap justify-center items-center gap-12 mb-12 border-b border-white/5 pb-12">
-
-      <div class="flex flex-col items-center gap-2">
-        <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">SSL</div>
-        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Ambiente Seguro</span>
-      </div>
-
-      <div class="flex flex-col items-center gap-2">
-        <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white font-black text-[10px] shadow-lg">LGPD</div>
-        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Dados Protegidos</span>
-      </div>
-
-      <div class="flex flex-col items-center gap-2">
-        <div class="w-12 h-12 bg-cyan-600 rounded-xl flex items-center justify-center text-white font-black text-lg shadow-lg">✓</div>
-        <span class="text-[9px] font-bold text-slate-400 uppercase tracking-widest">Site Verificado</span>
-      </div>
-
-    </div>
-<!-- COPYRIGHT -->
-    <p class="text-center text-slate-300 font-bold mb-2">
-      © 2026 INOVA CNH. Todos os direitos reservados.
-    </p>
-
-    <!-- ENDEREÇO -->
-    <p class="text-slate-300 text-[10px] uppercase tracking-widest text-center">
-      Endereço: Rua Pernambuco, 1000 – Savassi, Belo Horizonte – MG
-    </p>
-
-    <!-- CNPJ -->
-    <p class="text-slate-400 text-[10px] uppercase tracking-widest text-center mt-1">
-      CNPJ: 00.000.000/0000-00
-    </p>
-    <!-- LINKS LEGAIS -->
-    <div class="flex justify-center gap-8 mt-8 text-[11px] text-slate-500">
-      <a href="#" class="hover:text-cyan-400 transition">Privacidade</a>
-      <a href="#" class="hover:text-cyan-400 transition">Acessibilidade</a>
-      <a href="#" class="hover:text-cyan-400 transition">Termos</a>
-    </div>
-
-  </div>
-</footer>
-
- <!-- BOTÃO WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5531997210815" target="_blank" class="fixed bottom-6 right-6 z-[100] group">
-  <div class="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-20 group-hover:hidden"></div>
-  <div class="relative bg-green-500 w-16 h-16 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/40 hover:scale-110 transition-all duration-300">
-    <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.72.937 3.659 1.432 5.631 1.433h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </div>
-  <span class="absolute right-20 top-1/2 -translate-y-1/2 bg-white text-slate-900 px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity shadow-xl whitespace-nowrap pointer-events-none">
-    Fale Conosco!
-  </span>
-</a>
-
-<!-- BANNER DE COOKIES (LGPD) -->
-<div id="cookie-banner" style="
-  display:none;
-  position:fixed;
-  bottom:0;
-  width:100%;
-  background:#1e293b;
-  color:#fff;
-  padding:15px;
-  text-align:center;
-  border-top:1px solid #334155;
-  font-size:13px;
-  z-index:99999;
-">
-  Este site utiliza cookies essenciais para melhorar sua experiência.
-  <button id="accept-cookies" style="
-    margin-left: 10px;
-    background:#0ea5e9;
-    border:none;
-    padding:8px 15px;
-    border-radius:8px;
-    font-weight:700;
-    color:#0f172a;
-    cursor:pointer;
-  ">
-    Aceitar
-  </button>
-</div>
-
-<!-- SCRIPT DE REGISTRO DO PWA -->
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('sw.js')
-        .then(reg => console.log('Service Worker registrado com sucesso!'))
-        .catch(err => console.log('Erro ao registrar Service Worker:', err));
+  <script>
+    if(!localStorage.getItem('cookiesAccepted')) { document.getElementById('cookie-banner').style.display = 'block'; }
+    document.getElementById('accept-cookies').addEventListener('click', function() {
+      localStorage.setItem('cookiesAccepted', 'true');
+      document.getElementById('cookie-banner').style.display = 'none';
     });
-  }
-</script>
-
-<script src="app.js"></script>
-<script>
-  window.addEventListener('load', function() {
-      showCookieBanner();
-  });
-</script>
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
