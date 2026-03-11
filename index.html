@@ -279,11 +279,11 @@
       // Pega os dados direto do que foi digitado, sem depender de IDs complexos
       const formData = new FormData(form)
       const dados = {
-        nome: form.querySelector('[placeholder*="Nome"]')?.value || form.querySelector('input:nth-of-type(1)')?.value,
-        whatsapp: form.querySelector('[placeholder*="WhatsApp"]')?.value || form.querySelector('input:nth-of-type(2)')?.value,
-        cidade: form.querySelector('[placeholder*="Cidade"]')?.value || form.querySelector('input:nth-of-type(3)')?.value,
-        categoria: form.querySelector('select')?.value || 'Não informada',
-        detran: form.querySelector('[placeholder*="Detran"]')?.value || 'Não informado'
+        nome: document.getElementById('instrutor-nome').value,
+        whatsapp: document.getElementById('instrutor-whatsapp').value,
+        cidade: document.getElementById('instrutor-cidade').value,
+        categoria: document.getElementById('instrutor-categoria').value,
+        detran: document.getElementById('instrutor-detran').value
       }
 
       console.log('Tentando enviar dados:', dados)
@@ -307,5 +307,6 @@
 </script>
 </body>
 </html>
+
 
 
