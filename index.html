@@ -258,55 +258,66 @@
       document.getElementById('cookie-banner').style.display = 'none';
     });
   </script>
-<!-- BIBLIOTECA DO SUPABASE (O MOTOR) -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<!-- Use a versão mais recente para suportar as novas chaves sb_publishable -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0"></script>
+
 <script>
-  const S_URL = 'https://ejilmygsfmyysysrckah.supabase.co'
-  const S_KEY = 'sb_publishable_xUNR7PvBmVJqdrkBlbxwNQ_eT-0fhPY'
-  const _supabase = supabase.createClient(S_URL, S_KEY)
+  const S_URL = 'https://ejilmygsfmyysysrckah.supabase.co';
+  const S_KEY = 'sb_publishable_xUNR7PvBmVJqdrkBlbxwNQ_eT-0fhPY';
+  
+  console.log("🚀 Iniciando Inova CNH Engine...");
+  const _supabase = supabase.createClient(S_URL, S_KEY);
 
-  // Seleciona o primeiro formulário que encontrar na página
-  const form = document.querySelector('form')
+  const form = document.getElementById('form-instrutor');
 
-  if (form) {
+  if (!form) {
+    console.error("❌ ERRO CRÍTICO: Formulário 'form-instrutor' não encontrado!");
+  } else {
     form.addEventListener('submit', async (e) => {
-      e.preventDefault()
-      const btn = form.querySelector('button[type="submit"]') || form.querySelector('button')
-      
-      btn.innerText = 'ENVIANDO...'
-      btn.disabled = true
+      e.preventDefault();
+      console.log("📩 Formulário disparado! Coletando dados...");
 
-      // Pega os dados direto do que foi digitado, sem depender de IDs complexos
-      const formData = new FormData(form)
+      const btn = form.querySelector('button[type="submit"]');
+      btn.innerText = 'ENVIANDO...';
+      btn.disabled = true;
+
       const dados = {
         nome: document.getElementById('instrutor-nome').value,
         whatsapp: document.getElementById('instrutor-whatsapp').value,
         cidade: document.getElementById('instrutor-cidade').value,
         categoria: document.getElementById('instrutor-categoria').value,
         detran: document.getElementById('instrutor-detran').value
+      };
+
+      console.log("Data Payload:", dados);
+
+      try {
+        const { data, error } = await _supabase
+          .from('instrutores')
+          .insert([dados])
+          .select();
+
+        if (error) {
+          console.error("❌ Erro do Supabase:", error.message);
+          console.error("Detalhes:", error.details);
+          alert("Erro ao cadastrar: " + error.message);
+        } else {
+          console.log("✅ Sucesso absoluto!", data);
+          alert("CADASTRADO COM SUCESSO!");
+          form.reset();
+        }
+      } catch (err) {
+        console.error("💥 Erro inesperado de rede/JS:", err);
+      } finally {
+        btn.innerText = '🚀 QUERO SER INSTRUTOR PARCEIRO';
+        btn.disabled = false;
       }
-
-      console.log('Tentando enviar dados:', dados)
-
-      const { error } = await _supabase.from('instrutores').insert([dados])
-
-      if (error) {
-        console.error('Erro do Supabase:', error)
-        alert('Erro: ' + error.message)
-        btn.innerText = 'TENTAR NOVAMENTE'
-        btn.disabled = false
-      } else {
-        form.reset()
-        alert('CADASTRADO COM SUCESSO!')
-        btn.innerText = 'CADASTRADO!'
-        btn.disabled = false
-        setTimeout(() => { btn.innerText = 'CADASTRAR' }, 3000)
-      }
-    })
+    });
   }
 </script>
 </body>
 </html>
+
 
 
 
