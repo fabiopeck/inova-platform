@@ -258,65 +258,30 @@
       document.getElementById('cookie-banner').style.display = 'none';
     });
   </script>
-<!-- Use a versão mais recente para suportar as novas chaves sb_publishable -->
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.48.0"></script>
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-<script>
-  const S_URL = 'https://ejilmygsfmyysysrckah.supabase.co';
-  const S_KEY = 'sb_publishable_xUNR7PvBmVJqdrkBlbxwNQ_eT-0fhPY';
-  
-  console.log("🚀 Iniciando Inova CNH Engine...");
-  const _supabase = supabase.createClient(S_URL, S_KEY);
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAKVUuy830L25MlUNyR8Sd5h-EI-4E9XG0",
+  authDomain: "inovacnh.firebaseapp.com",
+  projectId: "inovacnh",
+  storageBucket: "inovacnh.firebasestorage.app",
+  messagingSenderId: "728936165674",
+  appId: "1:728936165674:web:93858fde2829316dcbee53",
+  measurementId: "G-7TYJRY0G6W"
+};
 
-  const form = document.getElementById('form-instrutor');
-
-  if (!form) {
-    console.error("❌ ERRO CRÍTICO: Formulário 'form-instrutor' não encontrado!");
-  } else {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      console.log("📩 Formulário disparado! Coletando dados...");
-
-      const btn = form.querySelector('button[type="submit"]');
-      btn.innerText = 'ENVIANDO...';
-      btn.disabled = true;
-
-      const dados = {
-        nome: document.getElementById('instrutor-nome').value,
-        whatsapp: document.getElementById('instrutor-whatsapp').value,
-        cidade: document.getElementById('instrutor-cidade').value,
-        categoria: document.getElementById('instrutor-categoria').value,
-        detran: document.getElementById('instrutor-detran').value
-      };
-
-      console.log("Data Payload:", dados);
-
-      try {
-        const { data, error } = await _supabase
-          .from('instrutores')
-          .insert([dados])
-          .select();
-
-        if (error) {
-          console.error("❌ Erro do Supabase:", error.message);
-          console.error("Detalhes:", error.details);
-          alert("Erro ao cadastrar: " + error.message);
-        } else {
-          console.log("✅ Sucesso absoluto!", data);
-          alert("CADASTRADO COM SUCESSO!");
-          form.reset();
-        }
-      } catch (err) {
-        console.error("💥 Erro inesperado de rede/JS:", err);
-      } finally {
-        btn.innerText = '🚀 QUERO SER INSTRUTOR PARCEIRO';
-        btn.disabled = false;
-      }
-    });
-  }
-</script>
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 </body>
 </html>
+
 
 
 
